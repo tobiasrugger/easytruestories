@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Day · Very Easy True Stories</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800;9..144,900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1A1F2E;
+  --paper:#F5EFE2;
+  --paper-deep:#EBE3D2;
+  --card:#FFFCF3;
+  --rule:#1A1F2E;
+  --accent:#D94A38;          /* fish red */
+  --accent-soft:#F4D2CB;
+  --ocean:#2E6B8C;           /* penguin blue */
+  --ocean-soft:#CFE2EE;
+  --gold:#D9A441;
+  --gold-soft:#F2E2BD;
+  --leaf:#3D7A4C;
+  --leaf-soft:#D2E5D4;
+  --muted:#6B6357;
+  --shadow: 4px 4px 0 var(--ink);
+  --shadow-lg: 6px 6px 0 var(--ink);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{background:var(--paper);color:var(--ink);font-family:'Nunito Sans',sans-serif;}
+body{
+  min-height:100vh;
+  background-image:
+    radial-gradient(circle at 20% 10%, rgba(217,74,56,.04) 0, transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(46,107,140,.05) 0, transparent 45%);
+}
+
+/* ── HEADER ── */
+.site-header{
+  border-bottom:3px solid var(--ink);
+  padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:var(--paper);
+}
+.site-header .crumb{
+  font-family:'Fraunces',serif;
+  font-weight:600;
+  font-style:italic;
+  font-size:14px;
+  letter-spacing:.02em;
+  color:var(--muted);
+}
+.site-header .crumb span{color:var(--ink);font-weight:800;font-style:normal;}
+.score-pill{
+  font-family:'Nunito Sans',sans-serif;
+  font-weight:700;
+  font-size:13px;
+  background:var(--ink);color:var(--paper);
+  padding:6px 12px;border-radius:999px;
+  letter-spacing:.04em;
+}
+
+/* ── TITLE PAGE ── */
+.title-page{
+  max-width:720px;
+  margin:0 auto;
+  padding:40px 24px 20px;
+  text-align:center;
+}
+.story-num{
+  display:inline-block;
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:13px;
+  letter-spacing:.3em;
+  color:var(--accent);
+  border:2px solid var(--accent);
+  padding:4px 14px;
+  border-radius:999px;
+  margin-bottom:18px;
+}
+.story-title{
+  font-family:'Fraunces',serif;
+  font-weight:900;
+  font-size:64px;
+  line-height:.95;
+  letter-spacing:-.02em;
+  margin-bottom:8px;
+}
+.story-title em{
+  font-style:italic;
+  color:var(--accent);
+}
+.story-sub{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-weight:400;
+  font-size:20px;
+  color:var(--muted);
+  margin-bottom:28px;
+}
+.start-btn{
+  font-family:'Nunito Sans',sans-serif;
+  font-weight:800;
+  font-size:16px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  background:var(--ink);
+  color:var(--paper);
+  border:3px solid var(--ink);
+  border-radius:0;
+  padding:14px 32px;
+  cursor:pointer;
+  box-shadow:var(--shadow);
+  transition:transform .12s, box-shadow .12s;
+}
+.start-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);}
+.start-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink);}
+
+/* ── PAGE LAYOUT ── */
+.page{
+  max-width:720px;
+  margin:0 auto;
+  padding:24px 20px 60px;
+  display:none;
+  animation: pageIn .35s ease-out;
+}
+.page.active{display:block;}
+@keyframes pageIn{
+  from{opacity:0;transform:translateY(8px);}
+  to{opacity:1;transform:none;}
+}
+
+.page-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:14px;
+}
+.page-meta .label{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:14px;
+  color:var(--muted);
+}
+.page-meta .label strong{color:var(--ink);font-style:normal;font-weight:800;}
+.dot-progress{display:flex;gap:6px;}
+.dot-progress .d{
+  width:8px;height:8px;border-radius:50%;
+  background:transparent;border:2px solid var(--ink);
+}
+.dot-progress .d.done{background:var(--ink);}
+.dot-progress .d.current{background:var(--accent);border-color:var(--accent);}
+
+/* ── PANEL (illustrated panel) ── */
+.panel{
+  background:var(--card);
+  border:3px solid var(--ink);
+  border-radius:0;
+  box-shadow:var(--shadow-lg);
+  margin-bottom:22px;
+  overflow:hidden;
+}
+.panel-strip{
+  background:var(--ink);
+  color:var(--paper);
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:13px;
+  padding:6px 14px;
+  letter-spacing:.04em;
+}
+.panel-art{
+  height:240px;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+  border-bottom:3px solid var(--ink);
+  overflow:hidden;
+}
+.panel-art.scene-1{ background: linear-gradient(180deg, #FFF1D6 0%, #FBDFA8 100%); }
+.panel-art.scene-2{ background: linear-gradient(180deg, #CFE2EE 0%, #98C5DC 100%); }
+.panel-art.scene-3{ background: linear-gradient(180deg, #FAE6DD 0%, #E89A8A 100%); }
+.scene-svg{width:100%;height:100%;display:block;}
+
+.panel-caption{
+  padding:18px 20px 20px;
+  font-family:'Fraunces',serif;
+  font-size:19px;
+  line-height:1.5;
+}
+.panel-caption strong{font-weight:800;}
+
+/* ── QUESTION CARDS ── */
+.question{
+  background:var(--card);
+  border:3px solid var(--ink);
+  margin-bottom:16px;
+  box-shadow:var(--shadow);
+}
+.question.predict{
+  background: linear-gradient(180deg, #FFFCF3 0%, var(--gold-soft) 100%);
+}
+.question.scored{
+  background: var(--card);
+}
+
+.q-header{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 16px;
+  border-bottom:2px solid var(--ink);
+  background:var(--paper-deep);
+}
+.q-tag{
+  font-family:'Nunito Sans',sans-serif;
+  font-weight:800;
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:3px 8px;
+  border:2px solid var(--ink);
+}
+.q-tag.predict{ background:var(--gold); color:var(--ink); }
+.q-tag.scored{  background:var(--ocean); color:var(--paper); }
+.q-num{
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:14px;
+  color:var(--muted);
+  margin-left:auto;
+}
+
+.q-prompt{
+  padding:14px 18px 6px;
+  font-family:'Fraunces',serif;
+  font-size:18px;
+  line-height:1.4;
+  font-weight:600;
+}
+.choices{
+  padding:8px 14px 16px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.choice{
+  text-align:left;
+  font-family:'Nunito Sans',sans-serif;
+  font-size:15px;
+  font-weight:600;
+  background:var(--paper);
+  color:var(--ink);
+  border:2px solid var(--ink);
+  padding:10px 14px;
+  cursor:pointer;
+  display:flex;align-items:center;gap:10px;
+  transition: background .12s, transform .08s;
+}
+.choice:hover:not(:disabled){background:var(--paper-deep);}
+.choice:active:not(:disabled){transform:scale(.99);}
+.choice:disabled{cursor:default;}
+.choice .letter{
+  font-family:'Fraunces',serif;
+  font-weight:800;
+  font-style:italic;
+  font-size:17px;
+  width:24px;flex-shrink:0;
+  color:var(--muted);
+}
+.choice.selected{
+  background:var(--ocean-soft);
+  border-color:var(--ocean);
+}
+.choice.selected .letter{color:var(--ocean);}
+.choice.correct{
+  background:var(--leaf-soft);
+  border-color:var(--leaf);
+}
+.choice.correct .letter{color:var(--leaf);}
+.choice.correct::after{
+  content:'✓';
+  margin-left:auto;
+  color:var(--leaf);
+  font-weight:900;
+  font-size:18px;
+}
+.choice.wrong{
+  background:var(--accent-soft);
+  border-color:var(--accent);
+  opacity:.8;
+}
+.choice.wrong .letter{color:var(--accent);}
+.choice.wrong::after{
+  content:'✗';
+  margin-left:auto;
+  color:var(--accent);
+  font-weight:900;
+  font-size:18px;
+}
+.choice.predicted{
+  background:var(--gold-soft);
+  border-color:var(--gold);
+}
+.choice.predicted .letter{color:var(--gold);}
+.choice.predicted::after{
+  content:'★';
+  margin-left:auto;
+  color:var(--gold);
+  font-weight:900;
+}
+
+.q-feedback{
+  padding:0 18px 14px;
+  font-family:'Fraunces',serif;
+  font-style:italic;
+  font-size:15px;
+  color:var(--muted);
+  display:none;
+}
+.q-feedback.show{display:block;animation:fadeIn .25s ease-out;}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* ── NAV BUTTON ── */
+.next-row{
+  display:flex;justify-content:flex-end;
+  margin-top:12px;
+}
+.next-btn{
+  font-family:'Nunito Sans',sans-serif;
+  font-weight:800;
+  font-size:15px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  background:var(--ink);
+  color:var(--paper);
+  border:3px solid var(--ink);
+  padding:12px 22px;
+  cursor:pointer;
+  box-shadow:var(--shadow);
+  transition:transform .12s, box-shadow .12s, opacity .2s;
+}
+.next-btn:disabled{
+  opacity:.3;
+  cursor:not-allowed;
+}
+.next-btn:hover:not(:disabled){transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);}
+.next-btn:active:not(:disabled){transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink);}
+
+/* ── RESULTS PAGE ── */
+.results-page{
+  max-width:720px;margin:0 auto;
+  padding:40px 24px;
+  text-align:center;
+  display:none;
+}
+.results-page.active{display:block;animation:pageIn .4s ease-out;}
+.results-icon{
+  font-size:80px;margin-bottom:8px;
+  display:inline-block;
+  animation: pop .5s cubic-bezier(.175,.885,.32,1.275);
+}
+@keyframes pop{from{transform:scale(.3);opacity:0;}to{transform:scale(1);opacity:1;}}
+.results-h{
+  font-family:'Fraunces',serif;font-weight:900;font-size:44px;
+  margin-bottom:6px;
+}
+.results-sub{
+  font-family:'Fraunces',serif;font-style:italic;font-size:18px;
+  color:var(--muted);margin-bottom:24px;
+}
+.score-card{
+  background:var(--card);
+  border:3px solid var(--ink);
+  box-shadow:var(--shadow-lg);
+  padding:24px;
+  margin:0 auto 22px;
+  max-width:380px;
+}
+.score-big{
+  font-family:'Fraunces',serif;font-weight:900;font-size:64px;line-height:1;
+  color:var(--ocean);
+}
+.score-label{
+  font-family:'Nunito Sans',sans-serif;font-weight:700;
+  font-size:13px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);margin-top:4px;
+}
+.predict-summary{
+  background:var(--gold-soft);
+  border:2px solid var(--gold);
+  padding:14px 18px;
+  margin-top:18px;
+  text-align:left;
+  font-family:'Fraunces',serif;
+  font-size:15px;
+}
+.predict-summary strong{font-weight:800;}
+.results-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+/* ── MOBILE ── */
+@media (max-width: 540px){
+  .story-title{font-size:46px;}
+  .panel-art{height:200px;}
+  .panel-caption{font-size:17px;padding:16px;}
+  .q-prompt{font-size:16px;}
+  .choice{font-size:14px;}
+  .results-h{font-size:34px;}
+  .score-big{font-size:50px;}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="crumb">Very Easy True Stories &nbsp;·&nbsp; <span>Story 1</span></div>
+  <div class="score-pill" id="score-pill">0 / 0</div>
+</header>
+
+<!-- ─── TITLE PAGE ─── -->
+<section class="title-page" id="title-page">
+  <div class="story-num">Story 01</div>
+  <h1 class="story-title">Shopping <em>Day</em></h1>
+  <p class="story-sub">A penguin goes to the fish market.</p>
+  <button class="start-btn" onclick="startStory()">Begin the Story →</button>
+</section>
+
+<!-- ─── PAGE 1 ─── -->
+<section class="page" id="page-1">
+  <div class="page-meta">
+    <div class="label">Page <strong>1</strong> of <strong>3</strong></div>
+    <div class="dot-progress">
+      <div class="d current"></div><div class="d"></div><div class="d"></div>
+    </div>
+  </div>
+
+  <!-- Prediction question BEFORE first panel -->
+  <div class="question predict" data-qid="p0">
+    <div class="q-header">
+      <span class="q-tag predict">Predict</span>
+      <span class="q-num">No right answer</span>
+    </div>
+    <div class="q-prompt">The story is called "Shopping Day." Who do you think goes shopping?</div>
+    <div class="choices">
+      <button class="choice" onclick="answerPredict(this,'p0')"><span class="letter">A.</span>A small child</button>
+      <button class="choice" onclick="answerPredict(this,'p0')"><span class="letter">B.</span>A penguin from the zoo</button>
+      <button class="choice" onclick="answerPredict(this,'p0')"><span class="letter">C.</span>A grandmother</button>
+      <button class="choice" onclick="answerPredict(this,'p0')"><span class="letter">D.</span>A robot</button>
+    </div>
+    <div class="q-feedback" id="fb-p0">Good guess! Let's see who it really is...</div>
+  </div>
+
+  <!-- Panel 1 -->
+  <div class="panel">
+    <div class="panel-strip">Panel 1 — A town in Japan</div>
+    <div class="panel-art scene-1">
+      <svg class="scene-svg" viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- street/sidewalk -->
+        <rect x="0" y="170" width="720" height="70" fill="#8C7158"/>
+        <rect x="0" y="170" width="720" height="6" fill="#1A1F2E"/>
+        <!-- shop in background -->
+        <rect x="40" y="60" width="180" height="120" fill="#F0D89A" stroke="#1A1F2E" stroke-width="3"/>
+        <rect x="40" y="60" width="180" height="22" fill="#D94A38" stroke="#1A1F2E" stroke-width="3"/>
+        <text x="130" y="76" text-anchor="middle" fill="#FFFCF3" font-family="Fraunces, serif" font-size="13" font-weight="700">魚 FISH SHOP</text>
+        <rect x="60" y="100" width="40" height="60" fill="#CFE2EE" stroke="#1A1F2E" stroke-width="2"/>
+        <rect x="160" y="100" width="40" height="60" fill="#CFE2EE" stroke="#1A1F2E" stroke-width="2"/>
+        <rect x="105" y="120" width="50" height="50" fill="#6B5640" stroke="#1A1F2E" stroke-width="2"/>
+        <!-- sign -->
+        <rect x="240" y="80" width="90" height="50" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
+        <text x="285" y="100" text-anchor="middle" font-family="Fraunces" font-size="11" font-weight="700">OTSUCHI</text>
+        <text x="285" y="118" text-anchor="middle" font-family="Fraunces" font-size="9">Japan</text>
+        <!-- penguin walking -->
+        <g transform="translate(420, 100)">
+          <!-- body -->
+          <ellipse cx="40" cy="60" rx="32" ry="42" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/>
+          <ellipse cx="40" cy="68" rx="22" ry="32" fill="#FFFCF3"/>
+          <!-- head -->
+          <circle cx="40" cy="22" r="22" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/>
+          <ellipse cx="40" cy="28" rx="14" ry="16" fill="#FFFCF3"/>
+          <!-- eyes -->
+          <circle cx="32" cy="20" r="3" fill="#1A1F2E"/>
+          <circle cx="48" cy="20" r="3" fill="#1A1F2E"/>
+          <circle cx="33" cy="19" r="1" fill="#FFFCF3"/>
+          <circle cx="49" cy="19" r="1" fill="#FFFCF3"/>
+          <!-- beak -->
+          <polygon points="36,28 44,28 40,36" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+          <!-- bag in flipper -->
+          <rect x="-10" y="55" width="22" height="26" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
+          <rect x="-8" y="50" width="6" height="8" fill="none" stroke="#1A1F2E" stroke-width="2"/>
+          <rect x="6" y="50" width="6" height="8" fill="none" stroke="#1A1F2E" stroke-width="2"/>
+          <!-- flipper -->
+          <ellipse cx="12" cy="62" rx="8" ry="14" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="2"/>
+          <!-- feet -->
+          <ellipse cx="30" cy="100" rx="10" ry="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+          <ellipse cx="50" cy="100" rx="10" ry="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+        </g>
+        <!-- speed lines -->
+        <line x1="380" y1="130" x2="410" y2="130" stroke="#1A1F2E" stroke-width="2"/>
+        <line x1="380" y1="145" x2="405" y2="145" stroke="#1A1F2E" stroke-width="2"/>
+        <line x1="380" y1="160" x2="410" y2="160" stroke="#1A1F2E" stroke-width="2"/>
+        <!-- sun -->
+        <circle cx="650" cy="40" r="20" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="panel-caption">
+      Otsuchi is a small town in Japan. Every morning, a <strong>penguin</strong> walks from her home to the fish market. Her name is <strong>Rara</strong>.
+    </div>
+  </div>
+
+  <!-- Comprehension -->
+  <div class="question scored" data-qid="q1" data-correct="b">
+    <div class="q-header">
+      <span class="q-tag scored">Question</span>
+      <span class="q-num">Q1 · 1 point</span>
+    </div>
+    <div class="q-prompt">Where does Rara live?</div>
+    <div class="choices">
+      <button class="choice" onclick="answerScored(this,'q1','a')"><span class="letter">A.</span>In a zoo</button>
+      <button class="choice" onclick="answerScored(this,'q1','b')"><span class="letter">B.</span>In a small town in Japan</button>
+      <button class="choice" onclick="answerScored(this,'q1','c')"><span class="letter">C.</span>At the fish market</button>
+      <button class="choice" onclick="answerScored(this,'q1','d')"><span class="letter">D.</span>At the beach</button>
+    </div>
+    <div class="q-feedback" id="fb-q1"></div>
+  </div>
+
+  <div class="next-row">
+    <button class="next-btn" id="next-1" disabled onclick="goToPage(2)">Next Page →</button>
+  </div>
+</section>
+
+<!-- ─── PAGE 2 ─── -->
+<section class="page" id="page-2">
+  <div class="page-meta">
+    <div class="label">Page <strong>2</strong> of <strong>3</strong></div>
+    <div class="dot-progress">
+      <div class="d done"></div><div class="d current"></div><div class="d"></div>
+    </div>
+  </div>
+
+  <!-- Panel 2 -->
+  <div class="panel">
+    <div class="panel-strip">Panel 2 — At the fish market</div>
+    <div class="panel-art scene-2">
+      <svg class="scene-svg" viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- floor -->
+        <rect x="0" y="180" width="720" height="60" fill="#A89478"/>
+        <rect x="0" y="180" width="720" height="5" fill="#1A1F2E"/>
+        <!-- counter/stall -->
+        <rect x="60" y="120" width="280" height="60" fill="#8C6B4A" stroke="#1A1F2E" stroke-width="3"/>
+        <rect x="60" y="120" width="280" height="14" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/>
+        <!-- ice with fish -->
+        <rect x="70" y="100" width="260" height="22" fill="#CFE2EE" stroke="#1A1F2E" stroke-width="2"/>
+        <!-- fish on ice -->
+        <g transform="translate(90, 96)">
+          <ellipse cx="0" cy="8" rx="22" ry="8" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
+          <polygon points="-22,8 -32,2 -32,14" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
+          <circle cx="14" cy="6" r="2" fill="#1A1F2E"/>
+        </g>
+        <g transform="translate(160, 100)">
+          <ellipse cx="0" cy="8" rx="22" ry="8" fill="#7AB5D0" stroke="#1A1F2E" stroke-width="2"/>
+          <polygon points="-22,8 -32,2 -32,14" fill="#7AB5D0" stroke="#1A1F2E" stroke-width="2"/>
+          <circle cx="14" cy="6" r="2" fill="#1A1F2E"/>
+        </g>
+        <g transform="translate(230, 96)">
+          <ellipse cx="0" cy="8" rx="22" ry="8" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+          <polygon points="-22,8 -32,2 -32,14" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+          <circle cx="14" cy="6" r="2" fill="#1A1F2E"/>
+        </g>
+        <g transform="translate(300, 100)">
+          <ellipse cx="0" cy="8" rx="22" ry="8" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
+          <polygon points="-22,8 -32,2 -32,14" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
+          <circle cx="14" cy="6" r="2" fill="#1A1F2E"/>
+        </g>
+        <!-- shopkeeper behind counter -->
+        <g transform="translate(180, 50)">
+          <ellipse cx="0" cy="40" rx="30" ry="35" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/>
+          <circle cx="0" cy="20" r="20" fill="#F4D2CB" stroke="#1A1F2E" stroke-width="3"/>
+          <!-- hat -->
+          <rect x="-22" y="2" width="44" height="10" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
+          <ellipse cx="0" cy="2" rx="22" ry="6" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
+          <!-- eyes & smile -->
+          <circle cx="-6" cy="20" r="2" fill="#1A1F2E"/>
+          <circle cx="6" cy="20" r="2" fill="#1A1F2E"/>
+          <path d="M -6,28 Q 0,32 6,28" fill="none" stroke="#1A1F2E" stroke-width="2" stroke-linecap="round"/>
+          <!-- speech bubble -->
+          <ellipse cx="60" cy="0" rx="40" ry="22" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
+          <polygon points="40,12 28,20 38,18" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
+          <text x="60" y="-2" text-anchor="middle" font-family="Fraunces" font-size="11" font-weight="700">Hello</text>
+          <text x="60" y="10" text-anchor="middle" font-family="Fraunces" font-size="11" font-weight="700">Rara!</text>
+        </g>
+        <!-- penguin at counter -->
+        <g transform="translate(420, 110)">
+          <ellipse cx="40" cy="60" rx="32" ry="42" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/>
+          <ellipse cx="40" cy="68" rx="22" ry="32" fill="#FFFCF3"/>
+          <circle cx="40" cy="22" r="22" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/>
+          <ellipse cx="40" cy="28" rx="14" ry="16" fill="#FFFCF3"/>
+          <circle cx="32" cy="20" r="3" fill="#1A1F2E"/>
+          <circle cx="48" cy="20" r="3" fill="#1A1F2E"/>
+          <circle cx="33" cy="19" r="1" fill="#FFFCF3"/>
+          <circle cx="49" cy="19" r="1" fill="#FFFCF3"/>
+          <polygon points="36,28 44,28 40,36" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+          <!-- bag -->
+          <rect x="-10" y="55" width="22" height="26" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
+          <ellipse cx="12" cy="62" rx="8" ry="14" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="2"/>
+          <ellipse cx="30" cy="100" rx="10" ry="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+          <ellipse cx="50" cy="100" rx="10" ry="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+        </g>
+        <!-- coins -->
+        <circle cx="500" cy="155" r="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+        <circle cx="514" cy="158" r="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="panel-caption">
+      Rara walks into the fish market with a small <strong>red bag</strong>. Inside the bag is <strong>money</strong>. The shopkeeper smiles. "Hello, Rara!" he says.
+    </div>
+  </div>
+
+  <!-- Comprehension -->
+  <div class="question scored" data-qid="q2" data-correct="c">
+    <div class="q-header">
+      <span class="q-tag scored">Question</span>
+      <span class="q-num">Q2 · 1 point</span>
+    </div>
+    <div class="q-prompt">What does Rara have in her red bag?</div>
+    <div class="choices">
+      <button class="choice" onclick="answerScored(this,'q2','a')"><span class="letter">A.</span>Fish</button>
+      <button class="choice" onclick="answerScored(this,'q2','b')"><span class="letter">B.</span>Toys</button>
+      <button class="choice" onclick="answerScored(this,'q2','c')"><span class="letter">C.</span>Money</button>
+      <button class="choice" onclick="answerScored(this,'q2','d')"><span class="letter">D.</span>Books</button>
+    </div>
+    <div class="q-feedback" id="fb-q2"></div>
+  </div>
+
+  <!-- Prediction before final panel -->
+  <div class="question predict" data-qid="p1">
+    <div class="q-header">
+      <span class="q-tag predict">Predict</span>
+      <span class="q-num">No right answer</span>
+    </div>
+    <div class="q-prompt">Rara has money. The shopkeeper has fish. What do you think happens next?</div>
+    <div class="choices">
+      <button class="choice" onclick="answerPredict(this,'p1')"><span class="letter">A.</span>The shopkeeper gives Rara a fish for free.</button>
+      <button class="choice" onclick="answerPredict(this,'p1')"><span class="letter">B.</span>Rara gives the shopkeeper money. The shopkeeper gives her a fish.</button>
+      <button class="choice" onclick="answerPredict(this,'p1')"><span class="letter">C.</span>Rara takes a fish and runs away.</button>
+      <button class="choice" onclick="answerPredict(this,'p1')"><span class="letter">D.</span>The shopkeeper does not understand Rara.</button>
+    </div>
+    <div class="q-feedback" id="fb-p1">Interesting prediction! Let's read on...</div>
+  </div>
+
+  <div class="next-row">
+    <button class="next-btn" id="next-2" disabled onclick="goToPage(3)">Next Page →</button>
+  </div>
+</section>
+
+<!-- ─── PAGE 3 ─── -->
+<section class="page" id="page-3">
+  <div class="page-meta">
+    <div class="label">Page <strong>3</strong> of <strong>3</strong></div>
+    <div class="dot-progress">
+      <div class="d done"></div><div class="d done"></div><div class="d current"></div>
+    </div>
+  </div>
+
+  <!-- Panel 3 -->
+  <div class="panel">
+    <div class="panel-strip">Panel 3 — Walking home</div>
+    <div class="panel-art scene-3">
+      <svg class="scene-svg" viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- ground -->
+        <rect x="0" y="180" width="720" height="60" fill="#8C7158"/>
+        <rect x="0" y="180" width="720" height="5" fill="#1A1F2E"/>
+        <!-- mountains -->
+        <polygon points="0,180 120,90 240,180" fill="#B57A6A" stroke="#1A1F2E" stroke-width="2"/>
+        <polygon points="180,180 320,80 460,180" fill="#A66856" stroke="#1A1F2E" stroke-width="2"/>
+        <polygon points="540,180 640,110 720,180" fill="#B57A6A" stroke="#1A1F2E" stroke-width="2"/>
+        <!-- house in distance -->
+        <rect x="540" y="130" width="60" height="50" fill="#F0D89A" stroke="#1A1F2E" stroke-width="2"/>
+        <polygon points="540,130 570,108 600,130" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
+        <rect x="562" y="155" width="16" height="25" fill="#6B5640" stroke="#1A1F2E" stroke-width="2"/>
+        <!-- penguin walking happily -->
+        <g transform="translate(280, 100)">
+          <ellipse cx="40" cy="60" rx="32" ry="42" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/>
+          <ellipse cx="40" cy="68" rx="22" ry="32" fill="#FFFCF3"/>
+          <circle cx="40" cy="22" r="22" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/>
+          <ellipse cx="40" cy="28" rx="14" ry="16" fill="#FFFCF3"/>
+          <!-- happy eyes (curved) -->
+          <path d="M 28,20 Q 32,16 36,20" fill="none" stroke="#1A1F2E" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M 44,20 Q 48,16 52,20" fill="none" stroke="#1A1F2E" stroke-width="2.5" stroke-linecap="round"/>
+          <polygon points="36,28 44,28 40,36" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+          <!-- bag with fish sticking out -->
+          <rect x="-10" y="55" width="24" height="28" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
+          <!-- fish tail sticking up -->
+          <ellipse cx="2" cy="50" rx="14" ry="5" fill="#7AB5D0" stroke="#1A1F2E" stroke-width="2"/>
+          <polygon points="-12,50 -20,46 -20,54" fill="#7AB5D0" stroke="#1A1F2E" stroke-width="2"/>
+          <circle cx="8" cy="49" r="1.5" fill="#1A1F2E"/>
+          <ellipse cx="12" cy="62" rx="8" ry="14" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="2"/>
+          <ellipse cx="30" cy="100" rx="10" ry="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+          <ellipse cx="50" cy="100" rx="10" ry="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+        </g>
+        <!-- happy lines -->
+        <text x="370" y="80" font-family="Fraunces" font-size="22" font-weight="700">♪</text>
+        <text x="395" y="100" font-family="Fraunces" font-size="18" font-weight="700">♪</text>
+        <!-- sun -->
+        <circle cx="60" cy="40" r="18" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+      </svg>
+    </div>
+    <div class="panel-caption">
+      Rara gives the shopkeeper money. The shopkeeper gives Rara a fish. Rara puts the fish in her bag. Then she walks <strong>home</strong>. She is a very happy penguin!
+    </div>
+  </div>
+
+  <!-- Comprehension -->
+  <div class="question scored" data-qid="q3" data-correct="a">
+    <div class="q-header">
+      <span class="q-tag scored">Question</span>
+      <span class="q-num">Q3 · 1 point</span>
+    </div>
+    <div class="q-prompt">How does Rara feel at the end of the story?</div>
+    <div class="choices">
+      <button class="choice" onclick="answerScored(this,'q3','a')"><span class="letter">A.</span>Happy</button>
+      <button class="choice" onclick="answerScored(this,'q3','b')"><span class="letter">B.</span>Sad</button>
+      <button class="choice" onclick="answerScored(this,'q3','c')"><span class="letter">C.</span>Tired</button>
+      <button class="choice" onclick="answerScored(this,'q3','d')"><span class="letter">D.</span>Hungry</button>
+    </div>
+    <div class="q-feedback" id="fb-q3"></div>
+  </div>
+
+  <!-- Final reflection prediction -->
+  <div class="question predict" data-qid="p2">
+    <div class="q-header">
+      <span class="q-tag predict">Think</span>
+      <span class="q-num">No right answer</span>
+    </div>
+    <div class="q-prompt">What do you think Rara will do tomorrow?</div>
+    <div class="choices">
+      <button class="choice" onclick="answerPredict(this,'p2')"><span class="letter">A.</span>Stay home and sleep all day.</button>
+      <button class="choice" onclick="answerPredict(this,'p2')"><span class="letter">B.</span>Go shopping for fish again.</button>
+      <button class="choice" onclick="answerPredict(this,'p2')"><span class="letter">C.</span>Go to a different store.</button>
+      <button class="choice" onclick="answerPredict(this,'p2')"><span class="letter">D.</span>Move to a new town.</button>
+    </div>
+    <div class="q-feedback" id="fb-p2">Nice thinking! There's no wrong answer here.</div>
+  </div>
+
+  <div class="next-row">
+    <button class="next-btn" id="next-3" disabled onclick="showResults()">See My Results →</button>
+  </div>
+</section>
+
+<!-- ─── RESULTS ─── -->
+<section class="results-page" id="results">
+  <div class="results-icon" id="results-icon">🐧</div>
+  <h2 class="results-h" id="results-h">Story Complete</h2>
+  <p class="results-sub" id="results-sub">You finished "Shopping Day"</p>
+
+  <div class="score-card">
+    <div class="score-big" id="results-score">0/3</div>
+    <div class="score-label">Comprehension Score</div>
+  </div>
+
+  <div class="predict-summary" id="predict-summary">
+    <strong>Predictions:</strong> You made <span id="predict-count">0</span> predictions in this story.
+    Predictions help you become a better reader. There are no right or wrong answers — they help you <em>think ahead</em>.
+  </div>
+
+  <div class="results-actions" style="margin-top:24px;">
+    <button class="start-btn" onclick="restart()">Read Again</button>
+  </div>
+</section>
+
+<script>
+const state = {
+  scored: {},      // qid -> {answer, correct}
+  predicted: {},   // qid -> answer
+  totalScored: 3,
+  totalPredict: 3,
+};
+
+function startStory(){
+  document.getElementById('title-page').style.display = 'none';
+  goToPage(1);
+}
+
+function goToPage(n){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-'+n).classList.add('active');
+  document.getElementById('results').classList.remove('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function answerScored(btn, qid, choice){
+  const q = btn.closest('.question');
+  if(q.dataset.locked) return;
+  q.dataset.locked = '1';
+
+  const correct = q.dataset.correct;
+  const buttons = q.querySelectorAll('.choice');
+  buttons.forEach(b => b.disabled = true);
+
+  if(choice === correct){
+    btn.classList.add('correct');
+    state.scored[qid] = {answer: choice, correct: true};
+    showFeedback(qid, '✓ Correct!');
+  } else {
+    btn.classList.add('wrong');
+    // also reveal correct answer
+    buttons.forEach(b => {
+      const letter = b.querySelector('.letter').textContent.toLowerCase().replace('.','').trim();
+      if(letter === correct) b.classList.add('correct');
+    });
+    state.scored[qid] = {answer: choice, correct: false};
+    showFeedback(qid, '✗ Not quite. The correct answer is highlighted in green.');
+  }
+
+  updateScorePill();
+  checkPageComplete(q);
+}
+
+function answerPredict(btn, qid){
+  const q = btn.closest('.question');
+  if(q.dataset.locked) return;
+  q.dataset.locked = '1';
+
+  const buttons = q.querySelectorAll('.choice');
+  buttons.forEach(b => b.disabled = true);
+  btn.classList.add('predicted');
+
+  state.predicted[qid] = btn.textContent.trim();
+  document.getElementById('fb-'+qid).classList.add('show');
+  checkPageComplete(q);
+}
+
+function showFeedback(qid, msg){
+  const fb = document.getElementById('fb-'+qid);
+  fb.textContent = msg;
+  fb.classList.add('show');
+}
+
+function updateScorePill(){
+  const got = Object.values(state.scored).filter(s => s.correct).length;
+  const answered = Object.keys(state.scored).length;
+  document.getElementById('score-pill').textContent = got + ' / ' + answered;
+}
+
+function checkPageComplete(qEl){
+  const page = qEl.closest('.page');
+  const allQs = page.querySelectorAll('.question');
+  const allLocked = Array.from(allQs).every(q => q.dataset.locked === '1');
+  if(allLocked){
+    const pageNum = page.id.split('-')[1];
+    const nextBtn = document.getElementById('next-' + pageNum);
+    if(nextBtn) nextBtn.disabled = false;
+  }
+}
+
+function showResults(){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('results').classList.add('active');
+
+  const got = Object.values(state.scored).filter(s => s.correct).length;
+  document.getElementById('results-score').textContent = got + '/' + state.totalScored;
+  document.getElementById('predict-count').textContent = Object.keys(state.predicted).length;
+
+  let icon = '📖', h = 'Good Try!', sub = 'Read it again to remember more.';
+  if(got === state.totalScored){ icon = '🏆'; h = 'Perfect!'; sub = 'You understood every part of the story.'; }
+  else if(got >= 2){ icon = '🐧'; h = 'Great Job!'; sub = 'You understood most of the story.'; }
+
+  document.getElementById('results-icon').textContent = icon;
+  document.getElementById('results-h').textContent = h;
+  document.getElementById('results-sub').textContent = sub;
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function restart(){
+  state.scored = {};
+  state.predicted = {};
+  document.querySelectorAll('.question').forEach(q => {
+    delete q.dataset.locked;
+    q.querySelectorAll('.choice').forEach(b => {
+      b.disabled = false;
+      b.classList.remove('correct','wrong','predicted','selected');
+    });
+    q.querySelectorAll('.q-feedback').forEach(f => f.classList.remove('show'));
+  });
+  document.querySelectorAll('.next-btn').forEach(b => b.disabled = true);
+  updateScorePill();
+  document.getElementById('results').classList.remove('active');
+  document.getElementById('title-page').style.display = 'block';
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
