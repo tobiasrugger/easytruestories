@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shopping Day · Very Easy True Stories</title>
+<title>Is There a Face on Mars? · Very Easy True Stories</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800;9..144,900&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 /* ── VERY EASY TRUE STORIES · SHARED STYLES ── */
@@ -381,316 +381,297 @@ body{
 <header class="site-header">
   <div class="header-left">
     <a href="index.html" class="back-link">← Library</a>
-    <div class="crumb">Very Easy True Stories &nbsp;·&nbsp; <span>Story 1</span></div>
+    <div class="crumb">Very Easy True Stories &nbsp;·&nbsp; <span>Story 5</span></div>
   </div>
   <div class="score-pill" id="score-pill">0 / 0</div>
 </header>
 
-<!-- ─── TITLE PAGE ─── -->
 <section class="title-page" id="title-page">
-  <div class="story-num">Story 01</div>
-  <h1 class="story-title">Shopping <em>Day</em></h1>
-  <p class="story-sub">A penguin goes to the fish market.</p>
+  <div class="story-num">Story 05</div>
+  <h1 class="story-title">Is There a Face <em>on Mars?</em></h1>
+  <p class="story-sub">A spaceship takes photos of Mars. People see something strange.</p>
   <button class="start-btn" onclick="startStory()">Begin the Story →</button>
 </section>
 
-<!-- ─── PAGE 1 ─── -->
+<!-- PAGE 1 -->
 <section class="page" id="page-1">
   <div class="page-meta">
-    <div class="label">Page <strong>1</strong> of <strong>3</strong></div>
-    <div class="dot-progress">
-      <div class="d current"></div><div class="d"></div><div class="d"></div>
-    </div>
+    <div class="label">Page <strong>1</strong> of <strong>4</strong></div>
+    <div class="dot-progress"><div class="d current"></div><div class="d"></div><div class="d"></div><div class="d"></div></div>
   </div>
 
-  <!-- Prediction BEFORE first panel -->
   <div class="question predict" data-qid="p0">
-    <div class="q-header">
-      <span class="q-tag predict">Predict</span>
-      <span class="q-num">No right answer</span>
-    </div>
-    <div class="q-prompt">The story is called "Shopping Day." Who do you think goes shopping?</div>
+    <div class="q-header"><span class="q-tag predict">Predict</span><span class="q-num">No right answer</span></div>
+    <div class="q-prompt">The story is called "Is There a Face on Mars?" What do you think?</div>
     <div class="choices">
-      <button class="choice" onclick="answerPredict(this,'p0')"><span class="letter">A.</span>A small child</button>
-      <button class="choice" onclick="answerPredict(this,'p0')"><span class="letter">B.</span>A penguin from the zoo</button>
-      <button class="choice" onclick="answerPredict(this,'p0')"><span class="letter">C.</span>A grandmother</button>
-      <button class="choice" onclick="answerPredict(this,'p0')"><span class="letter">D.</span>A robot</button>
+      <button class="choice" onclick="answerPredict(this,'p0')"><span class="letter">A.</span>Yes! There is a face on Mars.</button>
+      <button class="choice" onclick="answerPredict(this,'p0')"><span class="letter">B.</span>No, there are no faces on Mars.</button>
+      <button class="choice" onclick="answerPredict(this,'p0')"><span class="letter">C.</span>Maybe — I want to see the photo.</button>
+      <button class="choice" onclick="answerPredict(this,'p0')"><span class="letter">D.</span>I don't know.</button>
     </div>
-    <div class="q-feedback" id="fb-p0">Good guess! Let's see who it really is...</div>
+    <div class="q-feedback" id="fb-p0">Good prediction. Let's read the story...</div>
   </div>
 
-  <!-- Panel 1 -->
   <div class="panel">
-    <div class="panel-strip">Panel 1 — A town in Japan</div>
-    <div class="panel-art" style="background:linear-gradient(180deg,#FFF1D6 0%,#FBDFA8 100%);">
+    <div class="panel-strip">Panel 1 — A spaceship to Mars</div>
+    <div class="panel-art" style="background:linear-gradient(180deg,#1A1F2E 0%,#3D3055 100%);">
       <svg class="scene-svg" viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <rect x="0" y="170" width="720" height="70" fill="#8C7158"/>
-        <rect x="0" y="170" width="720" height="6" fill="#1A1F2E"/>
-        <rect x="40" y="60" width="180" height="120" fill="#F0D89A" stroke="#1A1F2E" stroke-width="3"/>
-        <rect x="40" y="60" width="180" height="22" fill="#D94A38" stroke="#1A1F2E" stroke-width="3"/>
-        <text x="130" y="76" text-anchor="middle" fill="#FFFCF3" font-family="Fraunces,serif" font-size="13" font-weight="700">魚 FISH SHOP</text>
-        <rect x="60" y="100" width="40" height="60" fill="#CFE2EE" stroke="#1A1F2E" stroke-width="2"/>
-        <rect x="160" y="100" width="40" height="60" fill="#CFE2EE" stroke="#1A1F2E" stroke-width="2"/>
-        <rect x="105" y="120" width="50" height="50" fill="#6B5640" stroke="#1A1F2E" stroke-width="2"/>
-        <rect x="240" y="80" width="90" height="50" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
-        <text x="285" y="100" text-anchor="middle" font-family="Fraunces" font-size="11" font-weight="700">OTSUCHI</text>
-        <text x="285" y="118" text-anchor="middle" font-family="Fraunces" font-size="9">Japan</text>
-        <g transform="translate(420, 100)">
-          <ellipse cx="40" cy="60" rx="32" ry="42" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/>
-          <ellipse cx="40" cy="68" rx="22" ry="32" fill="#FFFCF3"/>
-          <circle cx="40" cy="22" r="22" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/>
-          <ellipse cx="40" cy="28" rx="14" ry="16" fill="#FFFCF3"/>
-          <circle cx="32" cy="20" r="3" fill="#1A1F2E"/>
-          <circle cx="48" cy="20" r="3" fill="#1A1F2E"/>
-          <circle cx="33" cy="19" r="1" fill="#FFFCF3"/>
-          <circle cx="49" cy="19" r="1" fill="#FFFCF3"/>
-          <polygon points="36,28 44,28 40,36" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
-          <rect x="-10" y="55" width="22" height="26" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
-          <rect x="-8" y="50" width="6" height="8" fill="none" stroke="#1A1F2E" stroke-width="2"/>
-          <rect x="6" y="50" width="6" height="8" fill="none" stroke="#1A1F2E" stroke-width="2"/>
-          <ellipse cx="12" cy="62" rx="8" ry="14" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="2"/>
-          <ellipse cx="30" cy="100" rx="10" ry="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
-          <ellipse cx="50" cy="100" rx="10" ry="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+        <!-- Stars -->
+        <text x="80" y="40" font-family="Fraunces" font-size="14" fill="#FFFCF3">★</text>
+        <text x="200" y="60" font-family="Fraunces" font-size="10" fill="#FFFCF3">★</text>
+        <text x="400" y="30" font-family="Fraunces" font-size="12" fill="#FFFCF3">★</text>
+        <text x="640" y="50" font-family="Fraunces" font-size="14" fill="#FFFCF3">★</text>
+        <text x="500" y="80" font-family="Fraunces" font-size="10" fill="#FFFCF3">★</text>
+        <text x="120" y="180" font-family="Fraunces" font-size="12" fill="#FFFCF3">★</text>
+        <!-- Earth (left) -->
+        <circle cx="100" cy="180" r="60" fill="#2E6B8C" stroke="#FFFCF3" stroke-width="2"/>
+        <ellipse cx="80" cy="160" rx="20" ry="12" fill="#3D7A4C"/>
+        <ellipse cx="120" cy="190" rx="25" ry="14" fill="#3D7A4C"/>
+        <text x="100" y="250" text-anchor="middle" font-family="Fraunces" font-style="italic" font-size="14" fill="#FFFCF3">Earth</text>
+        <!-- Mars (right) -->
+        <circle cx="620" cy="120" r="50" fill="#D94A38" stroke="#FFFCF3" stroke-width="2"/>
+        <ellipse cx="600" cy="100" rx="10" ry="6" fill="#A33A2A"/>
+        <ellipse cx="640" cy="140" rx="12" ry="8" fill="#A33A2A"/>
+        <text x="620" y="190" text-anchor="middle" font-family="Fraunces" font-style="italic" font-size="14" fill="#FFFCF3">Mars</text>
+        <!-- Spaceship trail -->
+        <path d="M 160,170 Q 350,40 580,110" fill="none" stroke="#D9A441" stroke-width="3" stroke-dasharray="8,4"/>
+        <!-- Spaceship -->
+        <g transform="translate(380,90)">
+          <ellipse cx="0" cy="0" rx="22" ry="8" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
+          <ellipse cx="0" cy="-2" rx="12" ry="6" fill="#CFE2EE" stroke="#1A1F2E" stroke-width="1.5"/>
+          <polygon points="20,0 30,-3 30,3" fill="#D9A441" stroke="#1A1F2E" stroke-width="1.5"/>
+          <line x1="-5" y1="8" x2="-10" y2="20" stroke="#D94A38" stroke-width="2"/>
+          <line x1="0" y1="8" x2="0" y2="22" stroke="#D9A441" stroke-width="2"/>
+          <line x1="5" y1="8" x2="10" y2="20" stroke="#D94A38" stroke-width="2"/>
         </g>
-        <line x1="380" y1="130" x2="410" y2="130" stroke="#1A1F2E" stroke-width="2"/>
-        <line x1="380" y1="145" x2="405" y2="145" stroke="#1A1F2E" stroke-width="2"/>
-        <line x1="380" y1="160" x2="410" y2="160" stroke="#1A1F2E" stroke-width="2"/>
-        <circle cx="650" cy="40" r="20" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+        <!-- Year label -->
+        <rect x="280" y="190" width="160" height="40" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
+        <text x="360" y="218" text-anchor="middle" font-family="Fraunces" font-size="22" font-weight="900">1976</text>
       </svg>
     </div>
-    <div class="panel-caption">
-      Otsuchi is a small town in Japan. Every Monday, a <strong>penguin</strong> walks from her home to the fish market. Her name is <strong>Rara</strong>.
-    </div>
+    <div class="panel-caption">It is <strong>1976</strong>. A <strong>spaceship</strong> goes up. It goes to <strong>Mars</strong>. There is a <strong>camera</strong> in the spaceship. The camera takes photos of Mars.</div>
   </div>
 
   <div class="question scored" data-qid="q1" data-correct="b">
-    <div class="q-header">
-      <span class="q-tag scored">Question</span>
-      <span class="q-num">Q1</span>
-    </div>
-    <div class="q-prompt">Where does Rara live?</div>
+    <div class="q-header"><span class="q-tag scored">Question</span><span class="q-num">Q1</span></div>
+    <div class="q-prompt">Where does the spaceship go?</div>
     <div class="choices">
-      <button class="choice" onclick="answerScored(this,'q1','a')"><span class="letter">A.</span>In a zoo</button>
-      <button class="choice" onclick="answerScored(this,'q1','b')"><span class="letter">B.</span>In a small town in Japan</button>
-      <button class="choice" onclick="answerScored(this,'q1','c')"><span class="letter">C.</span>At the fish market</button>
-      <button class="choice" onclick="answerScored(this,'q1','d')"><span class="letter">D.</span>At the beach</button>
+      <button class="choice" onclick="answerScored(this,'q1','a')"><span class="letter">A.</span>To the Moon</button>
+      <button class="choice" onclick="answerScored(this,'q1','b')"><span class="letter">B.</span>To Mars</button>
+      <button class="choice" onclick="answerScored(this,'q1','c')"><span class="letter">C.</span>To the Sun</button>
+      <button class="choice" onclick="answerScored(this,'q1','d')"><span class="letter">D.</span>To Earth</button>
     </div>
     <div class="q-feedback" id="fb-q1"></div>
   </div>
 
-  <div class="next-row">
-    <button class="next-btn" id="next-1" disabled onclick="goToPage(2)">Next Page →</button>
-  </div>
+  <div class="next-row"><button class="next-btn" id="next-1" disabled onclick="goToPage(2)">Next Page →</button></div>
 </section>
 
-<!-- ─── PAGE 2 ─── -->
+<!-- PAGE 2 - the photo -->
 <section class="page" id="page-2">
   <div class="page-meta">
-    <div class="label">Page <strong>2</strong> of <strong>3</strong></div>
-    <div class="dot-progress">
-      <div class="d done"></div><div class="d current"></div><div class="d"></div>
-    </div>
+    <div class="label">Page <strong>2</strong> of <strong>4</strong></div>
+    <div class="dot-progress"><div class="d done"></div><div class="d current"></div><div class="d"></div><div class="d"></div></div>
   </div>
 
   <div class="panel">
-    <div class="panel-strip">Panel 2 — At the fish market</div>
-    <div class="panel-art" style="background:linear-gradient(180deg,#CFE2EE 0%,#98C5DC 100%);">
+    <div class="panel-strip">Panel 2 — The photo</div>
+    <div class="panel-art" style="background:linear-gradient(180deg,#1A1F2E 0%,#000000 100%);">
       <svg class="scene-svg" viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <rect x="0" y="180" width="720" height="60" fill="#A89478"/>
-        <rect x="0" y="180" width="720" height="5" fill="#1A1F2E"/>
-        <rect x="60" y="120" width="280" height="60" fill="#8C6B4A" stroke="#1A1F2E" stroke-width="3"/>
-        <rect x="60" y="120" width="280" height="14" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/>
-        <rect x="70" y="100" width="260" height="22" fill="#CFE2EE" stroke="#1A1F2E" stroke-width="2"/>
-        <g transform="translate(90,96)">
-          <ellipse cx="0" cy="8" rx="22" ry="8" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
-          <polygon points="-22,8 -32,2 -32,14" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
-          <circle cx="14" cy="6" r="2" fill="#1A1F2E"/>
-        </g>
-        <g transform="translate(160,100)">
-          <ellipse cx="0" cy="8" rx="22" ry="8" fill="#7AB5D0" stroke="#1A1F2E" stroke-width="2"/>
-          <polygon points="-22,8 -32,2 -32,14" fill="#7AB5D0" stroke="#1A1F2E" stroke-width="2"/>
-          <circle cx="14" cy="6" r="2" fill="#1A1F2E"/>
-        </g>
-        <g transform="translate(230,96)">
-          <ellipse cx="0" cy="8" rx="22" ry="8" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
-          <polygon points="-22,8 -32,2 -32,14" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
-          <circle cx="14" cy="6" r="2" fill="#1A1F2E"/>
-        </g>
-        <g transform="translate(300,100)">
-          <ellipse cx="0" cy="8" rx="22" ry="8" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
-          <polygon points="-22,8 -32,2 -32,14" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
-          <circle cx="14" cy="6" r="2" fill="#1A1F2E"/>
-        </g>
-        <g transform="translate(180,50)">
-          <ellipse cx="0" cy="40" rx="30" ry="35" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/>
-          <circle cx="0" cy="20" r="20" fill="#F4D2CB" stroke="#1A1F2E" stroke-width="3"/>
-          <rect x="-22" y="2" width="44" height="10" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
-          <ellipse cx="0" cy="2" rx="22" ry="6" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
-          <circle cx="-6" cy="20" r="2" fill="#1A1F2E"/>
-          <circle cx="6" cy="20" r="2" fill="#1A1F2E"/>
-          <path d="M -6,28 Q 0,32 6,28" fill="none" stroke="#1A1F2E" stroke-width="2" stroke-linecap="round"/>
-          <ellipse cx="60" cy="0" rx="40" ry="22" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
-          <polygon points="40,12 28,20 38,18" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
-          <text x="60" y="-2" text-anchor="middle" font-family="Fraunces" font-size="11" font-weight="700">Hello</text>
-          <text x="60" y="10" text-anchor="middle" font-family="Fraunces" font-size="11" font-weight="700">Rara!</text>
-        </g>
-        <g transform="translate(420,110)">
-          <ellipse cx="40" cy="60" rx="32" ry="42" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/>
-          <ellipse cx="40" cy="68" rx="22" ry="32" fill="#FFFCF3"/>
-          <circle cx="40" cy="22" r="22" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/>
-          <ellipse cx="40" cy="28" rx="14" ry="16" fill="#FFFCF3"/>
-          <circle cx="32" cy="20" r="3" fill="#1A1F2E"/>
-          <circle cx="48" cy="20" r="3" fill="#1A1F2E"/>
-          <circle cx="33" cy="19" r="1" fill="#FFFCF3"/>
-          <circle cx="49" cy="19" r="1" fill="#FFFCF3"/>
-          <polygon points="36,28 44,28 40,36" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
-          <rect x="-10" y="55" width="22" height="26" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
-          <ellipse cx="12" cy="62" rx="8" ry="14" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="2"/>
-          <ellipse cx="30" cy="100" rx="10" ry="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
-          <ellipse cx="50" cy="100" rx="10" ry="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
-        </g>
-        <circle cx="500" cy="155" r="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
-        <circle cx="514" cy="158" r="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
+        <!-- Photo frame -->
+        <rect x="240" y="20" width="240" height="200" fill="#FFFCF3" stroke="#FFFCF3" stroke-width="4"/>
+        <rect x="248" y="28" width="224" height="184" fill="#3D2817"/>
+        <!-- Face on Mars -->
+        <ellipse cx="360" cy="120" rx="80" ry="60" fill="#A89478" stroke="#FFFCF3" stroke-width="2"/>
+        <ellipse cx="340" cy="105" rx="10" ry="6" fill="#1A1F2E"/>
+        <ellipse cx="380" cy="105" rx="10" ry="6" fill="#1A1F2E"/>
+        <polygon points="360,115 355,130 365,130" fill="#1A1F2E"/>
+        <ellipse cx="360" cy="148" rx="20" ry="6" fill="#1A1F2E"/>
+        <!-- Photo label -->
+        <text x="360" y="200" text-anchor="middle" font-family="Fraunces" font-size="11" fill="#FFFCF3">PHOTO FROM MARS</text>
+        <!-- Magnifying / wow stars -->
+        <text x="100" y="80" font-family="Fraunces" font-size="36" fill="#D9A441">!</text>
+        <text x="600" y="100" font-family="Fraunces" font-size="36" fill="#D9A441">!</text>
+        <text x="80" y="180" font-family="Fraunces" font-size="14" fill="#FFFCF3">★</text>
+        <text x="640" y="200" font-family="Fraunces" font-size="14" fill="#FFFCF3">★</text>
       </svg>
     </div>
-    <div class="panel-caption">
-      Rara walks into the fish market with a small <strong>red bag</strong>. Inside the bag is <strong>money</strong>. The shopkeeper smiles. "Hello, Rara!" she says.
-    </div>
+    <div class="panel-caption">In one photo, there is a <strong>face</strong> on Mars! The face has <strong>eyes</strong>, a <strong>nose</strong>, and a <strong>mouth</strong>. The face is very big — it is one mile wide!</div>
   </div>
 
-  <div class="question scored" data-qid="q2" data-correct="c">
-    <div class="q-header">
-      <span class="q-tag scored">Question</span>
-      <span class="q-num">Q2</span>
-    </div>
-    <div class="q-prompt">What does Rara have in her red bag?</div>
+  <div class="question scored" data-qid="q2" data-correct="d">
+    <div class="q-header"><span class="q-tag scored">Question</span><span class="q-num">Q2</span></div>
+    <div class="q-prompt">What does the photo show?</div>
     <div class="choices">
-      <button class="choice" onclick="answerScored(this,'q2','a')"><span class="letter">A.</span>Fish</button>
-      <button class="choice" onclick="answerScored(this,'q2','b')"><span class="letter">B.</span>Toys</button>
-      <button class="choice" onclick="answerScored(this,'q2','c')"><span class="letter">C.</span>Money</button>
-      <button class="choice" onclick="answerScored(this,'q2','d')"><span class="letter">D.</span>Books</button>
+      <button class="choice" onclick="answerScored(this,'q2','a')"><span class="letter">A.</span>A car</button>
+      <button class="choice" onclick="answerScored(this,'q2','b')"><span class="letter">B.</span>A house</button>
+      <button class="choice" onclick="answerScored(this,'q2','c')"><span class="letter">C.</span>A spaceship</button>
+      <button class="choice" onclick="answerScored(this,'q2','d')"><span class="letter">D.</span>A face — with eyes, a nose, and a mouth</button>
     </div>
     <div class="q-feedback" id="fb-q2"></div>
   </div>
 
   <div class="question predict" data-qid="p1">
-    <div class="q-header">
-      <span class="q-tag predict">Predict</span>
-      <span class="q-num">No right answer</span>
-    </div>
-    <div class="q-prompt">Rara has money. The shopkeeper has fish. What do you think happens next?</div>
+    <div class="q-header"><span class="q-tag predict">Predict</span><span class="q-num">No right answer</span></div>
+    <div class="q-prompt">There is a face on Mars in the photo! What do you think it is?</div>
     <div class="choices">
-      <button class="choice" onclick="answerPredict(this,'p1')"><span class="letter">A.</span>The shopkeeper gives Rara a fish for free.</button>
-      <button class="choice" onclick="answerPredict(this,'p1')"><span class="letter">B.</span>Rara gives the shopkeeper money. The shopkeeper gives her a fish.</button>
-      <button class="choice" onclick="answerPredict(this,'p1')"><span class="letter">C.</span>Rara takes a fish and runs away.</button>
-      <button class="choice" onclick="answerPredict(this,'p1')"><span class="letter">D.</span>The shopkeeper does not understand Rara.</button>
+      <button class="choice" onclick="answerPredict(this,'p1')"><span class="letter">A.</span>A real face — maybe aliens made it!</button>
+      <button class="choice" onclick="answerPredict(this,'p1')"><span class="letter">B.</span>A trick of the camera.</button>
+      <button class="choice" onclick="answerPredict(this,'p1')"><span class="letter">C.</span>Just a hill that looks like a face.</button>
+      <button class="choice" onclick="answerPredict(this,'p1')"><span class="letter">D.</span>I don't know — it's a mystery!</button>
     </div>
-    <div class="q-feedback" id="fb-p1">Interesting prediction! Let's read on...</div>
+    <div class="q-feedback" id="fb-p1">A great question. Let's see what the scientists say...</div>
   </div>
 
-  <div class="next-row">
-    <button class="next-btn" id="next-2" disabled onclick="goToPage(3)">Next Page →</button>
-  </div>
+  <div class="next-row"><button class="next-btn" id="next-2" disabled onclick="goToPage(3)">Next Page →</button></div>
 </section>
 
-<!-- ─── PAGE 3 ─── -->
+<!-- PAGE 3 - newspapers and people -->
 <section class="page" id="page-3">
   <div class="page-meta">
-    <div class="label">Page <strong>3</strong> of <strong>3</strong></div>
-    <div class="dot-progress">
-      <div class="d done"></div><div class="d done"></div><div class="d current"></div>
+    <div class="label">Page <strong>3</strong> of <strong>4</strong></div>
+    <div class="dot-progress"><div class="d done"></div><div class="d done"></div><div class="d current"></div><div class="d"></div></div>
+  </div>
+
+  <div class="panel-row">
+    <div class="panel compact">
+      <div class="panel-strip">Panel 3 — In the newspapers</div>
+      <div class="panel-art" style="background:linear-gradient(180deg,#FFE9C2 0%,#F2E2BD 100%);">
+        <svg class="scene-svg" viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <!-- Stack of newspapers -->
+          <g transform="translate(60,40) rotate(-8)">
+            <rect x="0" y="0" width="160" height="120" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
+            <rect x="0" y="0" width="160" height="20" fill="#1A1F2E"/>
+            <text x="80" y="14" text-anchor="middle" font-family="Fraunces" font-size="11" fill="#FFFCF3" font-weight="900">DAILY NEWS</text>
+            <text x="80" y="44" text-anchor="middle" font-family="Fraunces" font-size="13" font-weight="900">FACE ON MARS!</text>
+            <rect x="40" y="55" width="80" height="50" fill="#3D2817" stroke="#1A1F2E" stroke-width="1.5"/>
+            <ellipse cx="80" cy="80" rx="22" ry="16" fill="#A89478"/>
+            <circle cx="74" cy="78" r="2" fill="#1A1F2E"/>
+            <circle cx="86" cy="78" r="2" fill="#1A1F2E"/>
+            <ellipse cx="80" cy="88" rx="6" ry="2" fill="#1A1F2E"/>
+          </g>
+          <g transform="translate(160,80) rotate(6)">
+            <rect x="0" y="0" width="140" height="100" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
+            <rect x="0" y="0" width="140" height="16" fill="#D94A38"/>
+            <text x="70" y="12" text-anchor="middle" font-family="Fraunces" font-size="9" fill="#FFFCF3" font-weight="900">CLARION</text>
+            <text x="70" y="36" text-anchor="middle" font-family="Fraunces" font-size="12" font-weight="900">A FACE ON MARS</text>
+            <rect x="35" y="45" width="70" height="40" fill="#3D2817" stroke="#1A1F2E" stroke-width="1.5"/>
+            <ellipse cx="70" cy="65" rx="18" ry="13" fill="#A89478"/>
+          </g>
+        </svg>
+      </div>
+      <div class="panel-caption">The photo is in many <strong>newspapers</strong>. People say, "Look! There's a face on Mars!"</div>
+    </div>
+    <div class="panel compact">
+      <div class="panel-strip">Panel 4 — Scientists say...</div>
+      <div class="panel-art" style="background:linear-gradient(180deg,#CFE2EE 0%,#A6CFAA 100%);">
+        <svg class="scene-svg" viewBox="0 0 360 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+          <!-- Two scientists in lab coats -->
+          <g transform="translate(120,80)">
+            <ellipse cx="0" cy="-15" rx="14" ry="10" fill="#5C4530" stroke="#1A1F2E" stroke-width="2"/>
+            <circle cx="0" cy="0" r="18" fill="#F4D2CB" stroke="#1A1F2E" stroke-width="2"/>
+            <circle cx="-6" cy="-2" r="4" fill="none" stroke="#1A1F2E" stroke-width="1.5"/>
+            <circle cx="6" cy="-2" r="4" fill="none" stroke="#1A1F2E" stroke-width="1.5"/>
+            <line x1="-2" y1="-2" x2="2" y2="-2" stroke="#1A1F2E" stroke-width="1.5"/>
+            <line x1="-7" y1="9" x2="7" y2="9" stroke="#1A1F2E" stroke-width="2"/>
+            <path d="M -22,18 L -26,80 L 26,80 L 22,18 Z" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
+          </g>
+          <g transform="translate(240,80)">
+            <ellipse cx="0" cy="-13" rx="14" ry="10" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="2"/>
+            <circle cx="0" cy="0" r="18" fill="#E8B695" stroke="#1A1F2E" stroke-width="2"/>
+            <circle cx="-5" cy="-2" r="2" fill="#1A1F2E"/>
+            <circle cx="5" cy="-2" r="2" fill="#1A1F2E"/>
+            <line x1="-7" y1="9" x2="7" y2="9" stroke="#1A1F2E" stroke-width="2"/>
+            <path d="M -22,18 L -26,80 L 26,80 L 22,18 Z" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
+          </g>
+          <!-- speech -->
+          <ellipse cx="180" cy="30" rx="120" ry="22" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="2"/>
+          <text x="180" y="36" text-anchor="middle" font-family="Fraunces" font-size="13" font-weight="700">"It's not a face. It's a hill."</text>
+        </svg>
+      </div>
+      <div class="panel-caption"><strong>"No,"</strong> the scientists say. <strong>"It's not a face. It's a hill."</strong></div>
     </div>
   </div>
 
-  <div class="panel">
-    <div class="panel-strip">Panel 3 — Walking home</div>
-    <div class="panel-art" style="background:linear-gradient(180deg,#FAE6DD 0%,#E89A8A 100%);">
-      <svg class="scene-svg" viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <rect x="0" y="180" width="720" height="60" fill="#8C7158"/>
-        <rect x="0" y="180" width="720" height="5" fill="#1A1F2E"/>
-        <polygon points="0,180 120,90 240,180" fill="#B57A6A" stroke="#1A1F2E" stroke-width="2"/>
-        <polygon points="180,180 320,80 460,180" fill="#A66856" stroke="#1A1F2E" stroke-width="2"/>
-        <polygon points="540,180 640,110 720,180" fill="#B57A6A" stroke="#1A1F2E" stroke-width="2"/>
-        <rect x="540" y="130" width="60" height="50" fill="#F0D89A" stroke="#1A1F2E" stroke-width="2"/>
-        <polygon points="540,130 570,108 600,130" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
-        <rect x="562" y="155" width="16" height="25" fill="#6B5640" stroke="#1A1F2E" stroke-width="2"/>
-        <g transform="translate(280,100)">
-          <ellipse cx="40" cy="60" rx="32" ry="42" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/>
-          <ellipse cx="40" cy="68" rx="22" ry="32" fill="#FFFCF3"/>
-          <circle cx="40" cy="22" r="22" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/>
-          <ellipse cx="40" cy="28" rx="14" ry="16" fill="#FFFCF3"/>
-          <path d="M 28,20 Q 32,16 36,20" fill="none" stroke="#1A1F2E" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M 44,20 Q 48,16 52,20" fill="none" stroke="#1A1F2E" stroke-width="2.5" stroke-linecap="round"/>
-          <polygon points="36,28 44,28 40,36" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
-          <rect x="-10" y="55" width="24" height="28" fill="#D94A38" stroke="#1A1F2E" stroke-width="2"/>
-          <ellipse cx="2" cy="50" rx="14" ry="5" fill="#7AB5D0" stroke="#1A1F2E" stroke-width="2"/>
-          <polygon points="-12,50 -20,46 -20,54" fill="#7AB5D0" stroke="#1A1F2E" stroke-width="2"/>
-          <circle cx="8" cy="49" r="1.5" fill="#1A1F2E"/>
-          <ellipse cx="12" cy="62" rx="8" ry="14" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="2"/>
-          <ellipse cx="30" cy="100" rx="10" ry="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
-          <ellipse cx="50" cy="100" rx="10" ry="6" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
-        </g>
-        <text x="370" y="80" font-family="Fraunces" font-size="22" font-weight="700">♪</text>
-        <text x="395" y="100" font-family="Fraunces" font-size="18" font-weight="700">♪</text>
-        <circle cx="60" cy="40" r="18" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/>
-      </svg>
-    </div>
-    <div class="panel-caption">
-      Rara gives the shopkeeper money. The shopkeeper gives Rara a fish. Rara puts the fish in her bag. Then she walks <strong>home</strong>. She is a very happy penguin!
-    </div>
-  </div>
-
-  <div class="question scored" data-qid="q3" data-correct="a">
-    <div class="q-header">
-      <span class="q-tag scored">Question</span>
-      <span class="q-num">Q3</span>
-    </div>
-    <div class="q-prompt">How does Rara feel at the end of the story?</div>
+  <div class="question scored" data-qid="q3" data-correct="b">
+    <div class="q-header"><span class="q-tag scored">Question</span><span class="q-num">Q3</span></div>
+    <div class="q-prompt">What do the scientists say about the photo?</div>
     <div class="choices">
-      <button class="choice" onclick="answerScored(this,'q3','a')"><span class="letter">A.</span>Happy</button>
-      <button class="choice" onclick="answerScored(this,'q3','b')"><span class="letter">B.</span>Sad</button>
-      <button class="choice" onclick="answerScored(this,'q3','c')"><span class="letter">C.</span>Tired</button>
-      <button class="choice" onclick="answerScored(this,'q3','d')"><span class="letter">D.</span>Hungry</button>
+      <button class="choice" onclick="answerScored(this,'q3','a')"><span class="letter">A.</span>"Yes, it is a face!"</button>
+      <button class="choice" onclick="answerScored(this,'q3','b')"><span class="letter">B.</span>"It's not a face. It's a hill."</button>
+      <button class="choice" onclick="answerScored(this,'q3','c')"><span class="letter">C.</span>"There is a city on Mars."</button>
+      <button class="choice" onclick="answerScored(this,'q3','d')"><span class="letter">D.</span>"The photo is fake."</button>
     </div>
     <div class="q-feedback" id="fb-q3"></div>
   </div>
 
-  <div class="question predict" data-qid="p2">
-    <div class="q-header">
-      <span class="q-tag predict">Think</span>
-      <span class="q-num">No right answer</span>
-    </div>
-    <div class="q-prompt">What do you think Rara will do next Monday?</div>
-    <div class="choices">
-      <button class="choice" onclick="answerPredict(this,'p2')"><span class="letter">A.</span>Stay home and sleep all day.</button>
-      <button class="choice" onclick="answerPredict(this,'p2')"><span class="letter">B.</span>Go shopping for fish again.</button>
-      <button class="choice" onclick="answerPredict(this,'p2')"><span class="letter">C.</span>Go to a different store.</button>
-      <button class="choice" onclick="answerPredict(this,'p2')"><span class="letter">D.</span>Move to a new town.</button>
-    </div>
-    <div class="q-feedback" id="fb-p2">Nice thinking! There's no wrong answer here.</div>
-  </div>
-
-  <div class="next-row">
-    <button class="next-btn" id="next-3" disabled onclick="showResults()">See My Results →</button>
-  </div>
+  <div class="next-row"><button class="next-btn" id="next-3" disabled onclick="goToPage(4)">Next Page →</button></div>
 </section>
 
-<!-- ─── RESULTS ─── -->
-<section class="results-page" id="results">
-  <div class="results-icon" id="results-icon">🐧</div>
-  <h2 class="results-h" id="results-h">Story Complete</h2>
-  <p class="results-sub" id="results-sub">You finished "Shopping Day"</p>
+<!-- PAGE 4 - light and shadow + final question -->
+<section class="page" id="page-4">
+  <div class="page-meta">
+    <div class="label">Page <strong>4</strong> of <strong>4</strong></div>
+    <div class="dot-progress"><div class="d done"></div><div class="d done"></div><div class="d done"></div><div class="d current"></div></div>
+  </div>
 
+  <div class="panel">
+    <div class="panel-strip">Panel 5 — Light and shadow</div>
+    <div class="panel-art" style="background:linear-gradient(180deg,#1A1F2E 0%,#3D2817 100%);">
+      <svg class="scene-svg" viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <!-- Hill from the side -->
+        <path d="M 100,200 Q 360,40 620,200" fill="#A89478" stroke="#FFFCF3" stroke-width="2"/>
+        <!-- Sun (light source) -->
+        <circle cx="120" cy="80" r="28" fill="#D9A441" stroke="#FFFCF3" stroke-width="2"/>
+        <text x="120" y="50" text-anchor="middle" font-family="Fraunces" font-style="italic" font-size="13" fill="#FFFCF3">light</text>
+        <!-- Light rays -->
+        <line x1="148" y1="80" x2="180" y2="100" stroke="#D9A441" stroke-width="2"/>
+        <line x1="140" y1="100" x2="200" y2="140" stroke="#D9A441" stroke-width="2"/>
+        <line x1="155" y1="115" x2="220" y2="160" stroke="#D9A441" stroke-width="2"/>
+        <!-- Shadow side of hill -->
+        <path d="M 360,40 Q 480,150 620,200 L 360,200 Z" fill="#1A1F2E" stroke="#FFFCF3" stroke-width="2" opacity="0.7"/>
+        <text x="500" y="180" text-anchor="middle" font-family="Fraunces" font-style="italic" font-size="13" fill="#FFFCF3">shadow</text>
+      </svg>
+    </div>
+    <div class="panel-caption">The scientists say, <strong>"Look — light and shadow make the face."</strong> The light is on one side. The shadow is on the other side. Together, they look like eyes, a nose, and a mouth.</div>
+  </div>
+
+  <div class="question scored" data-qid="q4" data-correct="c">
+    <div class="q-header"><span class="q-tag scored">Question</span><span class="q-num">Q4</span></div>
+    <div class="q-prompt">What makes the face?</div>
+    <div class="choices">
+      <button class="choice" onclick="answerScored(this,'q4','a')"><span class="letter">A.</span>Aliens</button>
+      <button class="choice" onclick="answerScored(this,'q4','b')"><span class="letter">B.</span>Mars rocks</button>
+      <button class="choice" onclick="answerScored(this,'q4','c')"><span class="letter">C.</span>Light and shadow on a hill</button>
+      <button class="choice" onclick="answerScored(this,'q4','d')"><span class="letter">D.</span>The camera is broken</button>
+    </div>
+    <div class="q-feedback" id="fb-q4"></div>
+  </div>
+
+  <div class="question predict" data-qid="p2">
+    <div class="q-header"><span class="q-tag predict">Think</span><span class="q-num">No right answer</span></div>
+    <div class="q-prompt">The scientists say it's only light and shadow. <strong>What do YOU think?</strong> Is it a face — or is it light and shadow on a hill?</div>
+    <div class="choices">
+      <button class="choice" onclick="answerPredict(this,'p2')"><span class="letter">A.</span>I think it's a face!</button>
+      <button class="choice" onclick="answerPredict(this,'p2')"><span class="letter">B.</span>I think the scientists are right — it's just a hill.</button>
+      <button class="choice" onclick="answerPredict(this,'p2')"><span class="letter">C.</span>I'm not sure. It's a mystery.</button>
+      <button class="choice" onclick="answerPredict(this,'p2')"><span class="letter">D.</span>I want more information!</button>
+    </div>
+    <div class="q-feedback" id="fb-p2">A great question to think about. Sometimes our eyes show us things that aren't really there!</div>
+  </div>
+
+  <div class="next-row"><button class="next-btn" id="next-4" disabled onclick="showResults()">See My Results →</button></div>
+</section>
+
+<section class="results-page" id="results">
+  <div class="results-icon" id="results-icon">🪐</div>
+  <h2 class="results-h" id="results-h">Story Complete</h2>
+  <p class="results-sub" id="results-sub">You finished "Is There a Face on Mars?"</p>
   <div class="score-card">
-    <div class="score-big" id="results-score">0/3</div>
+    <div class="score-big" id="results-score">0/4</div>
     <div class="score-label">Score (first try)</div>
   </div>
-
-  <div class="predict-summary">
-    <strong>Predictions:</strong> You made <span id="predict-count">0</span> predictions in this story.
-    Predictions help you think ahead — there's no right or wrong answer.
-  </div>
-
+  <div class="predict-summary"><strong>Predictions:</strong> You made <span id="predict-count">0</span> predictions in this story.</div>
   <div class="results-actions">
     <button class="start-btn" onclick="restart()">Read Again</button>
     <a href="index.html" class="start-btn" style="text-decoration:none;display:inline-block;">Back to Library</a>
