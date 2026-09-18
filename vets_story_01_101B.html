@@ -375,6 +375,20 @@ body{
 }
 
 
+.jpflag{display:inline-block;width:26px;vertical-align:-3px;margin-left:5px;}
+.jpflag svg{display:block;width:100%;height:auto;}
+
+/* ══ ANSWER CHECKING ══ */
+.mlfb,.wfb{display:block;font-size:14px;font-weight:700;margin-top:5px;}
+.mlfb.y,.wfb.y{color:var(--leaf);}
+.mlfb.n,.wfb.n{color:var(--accent);}
+.mlfb.warn,.wfb.warn{color:#8A6508;}
+.wtries{display:block;font-size:12.5px;color:var(--muted);font-weight:700;margin-top:3px;}
+.mlin.y,.wlin.y{border-bottom-color:var(--leaf);background:var(--leaf-soft);}
+.mlin.n,.wlin.n{border-bottom-color:var(--accent);background:var(--accent-soft);}
+.mlin.warn,.wlin.warn{border-bottom-color:var(--gold);background:var(--gold-soft);}
+@media print{.mlfb,.wfb,.wtries,.mlcheck,.wcheck{display:none !important;}}
+
 /* ══ TAP-WORDS MODE ══ */
 body.wt-on [translate="no"]{
   outline:2px dashed var(--gold);outline-offset:3px;border-radius:6px;
@@ -397,6 +411,7 @@ body.wt-on .wt-note{display:block;}
 }
 #wtip.show{display:block;}
 #wtip .ww{font-family:'Fraunces',serif;font-weight:800;font-size:17px;display:block;}
+#wtip .wd{display:none;font-size:14px;line-height:1.5;margin-top:3px;}
 #wtip .wt{display:block;margin-top:5px;color:var(--ocean);font-weight:700;font-size:16px;}
 #wtip .wt.wait{color:var(--muted);font-style:italic;font-weight:400;}
 #xlbanner{
@@ -583,7 +598,7 @@ body.no-motion .mystery,body.no-motion .qm{animation:none !important;}
 }
 .gl:hover,.gl:focus{background:var(--ocean-soft);outline:none;border-radius:3px;}
 .gl-pop{
-  position:absolute;z-index:40;left:50%;transform:translateX(-50%);
+  display:none;position:absolute;z-index:40;left:50%;transform:translateX(-50%);
   bottom:calc(100% + 10px);width:min(270px,72vw);
   background:var(--card);border:3px solid var(--ink);border-radius:10px;
   box-shadow:var(--shadow);padding:11px 13px;
@@ -769,7 +784,7 @@ body.no-motion .mk-bag{animation:none !important;}
 </style>
 </head>
 <body>
-<div id="wtip"><span class="ww"></span><span class="wt"></span></div>
+<div id="wtip"><span class="ww"></span><span class="wd"></span><span class="wt"></span></div>
 <div id="xlbanner" translate="no">
   <b>Your browser is translating this page.</b>
   The story and the activities need to stay in English, or they will not work.
@@ -856,7 +871,7 @@ body.no-motion .mk-bag{animation:none !important;}
   <button class="start-btn" onclick="startStory()">Begin the Story →</button>
 </section>
 
-<section class="page" id="page-0"><div class="page-meta"><div class="label">Words <strong>first</strong></div><div class="dot-progress"><div class="d current"></div><div class="d"></div><div class="d"></div><div class="d"></div></div></div><div class="wt-note">Tap words is <b>ON</b>. Tap <b>any word</b> — in the directions or in the activities — to see it in your language. Your taps will not choose answers until you turn it off.</div><h2 class="vq-title">Vocabulary Practice</h2><p class="small" style="margin-bottom:16px">Learn these words before you read. You will see all of them in the story.</p><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Match the picture with a word from the word bank.</div><div class="wordbank"><div class="wb-label">WORD BANK</div><div class="wb-words">Monday&nbsp; &nbsp;bag&nbsp; &nbsp;fish&nbsp; &nbsp;market&nbsp; &nbsp;money&nbsp; &nbsp;penguin&nbsp; &nbsp;shopkeeper&nbsp; &nbsp;town</div></div><div class="vq-eg"><i>EXAMPLE:</i> &nbsp;___<u>&nbsp;fish&nbsp;</u>___</div><div class="vpic-grid"><div class="vpic"><div class="vpic-n">1.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="penguin"><ellipse cx="60" cy="52" rx="21" ry="27" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/><ellipse cx="60" cy="56" rx="13" ry="19" fill="#FFFCF3"/><circle cx="60" cy="23" r="15" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/><ellipse cx="60" cy="27" rx="9" ry="10" fill="#FFFCF3"/><circle cx="55" cy="21" r="2.2" fill="#1A1F2E"/><circle cx="65" cy="21" r="2.2" fill="#1A1F2E"/><polygon points="56,28 64,28 60,34" fill="#D9A441" stroke="#1A1F2E" stroke-width="1.5"/><ellipse cx="52" cy="80" rx="8" ry="5" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/><ellipse cx="68" cy="80" rx="8" ry="5" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/></svg><select class="vsel" data-a="penguin" aria-label="word for picture 1"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">2.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="market"><rect x="24" y="30" width="72" height="50" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/><path d="M 16,40 H 104 L 95,56 H 25 Z" fill="#D94A38" stroke="#1A1F2E" stroke-width="3"/><rect x="46" y="58" width="24" height="22" fill="#CFE2EE" stroke="#1A1F2E" stroke-width="2"/><text x="60" y="37" text-anchor="middle" font-family="Fraunces,serif" font-size="11" font-weight="700" fill="#1A1F2E">魚</text></svg><select class="vsel" data-a="market" aria-label="word for picture 2"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">3.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="fish"><ellipse cx="58" cy="45" rx="32" ry="19" fill="#7AB5D0" stroke="#1A1F2E" stroke-width="3"/><polygon points="90,45 110,30 110,60" fill="#7AB5D0" stroke="#1A1F2E" stroke-width="3"/><circle cx="40" cy="39" r="3.5" fill="#1A1F2E"/><path d="M 52,34 q 9,7 0,14" fill="none" stroke="#1A1F2E" stroke-width="2"/></svg><select class="vsel" data-a="fish" aria-label="word for picture 3"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">4.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="money"><circle cx="45" cy="52" r="17" fill="#D9A441" stroke="#1A1F2E" stroke-width="3"/><circle cx="74" cy="45" r="17" fill="#D9A441" stroke="#1A1F2E" stroke-width="3"/><text x="74" y="52" text-anchor="middle" font-family="Fraunces,serif" font-size="18" font-weight="900" fill="#1A1F2E">100</text></svg><select class="vsel" data-a="money" aria-label="word for picture 4"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">5.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="bag"><rect x="38" y="32" width="46" height="48" fill="#D94A38" stroke="#1A1F2E" stroke-width="3"/><path d="M 48,32 q 13,-18 26,0" fill="none" stroke="#1A1F2E" stroke-width="3"/></svg><select class="vsel" data-a="bag" aria-label="word for picture 5"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">6.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Monday"><rect x="26" y="24" width="68" height="56" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/><rect x="26" y="24" width="68" height="16" fill="#2E6B8C" stroke="#1A1F2E" stroke-width="3"/><line x1="42" y1="16" x2="42" y2="32" stroke="#1A1F2E" stroke-width="4"/><line x1="78" y1="16" x2="78" y2="32" stroke="#1A1F2E" stroke-width="4"/><text x="60" y="66" text-anchor="middle" font-family="Fraunces,serif" font-size="18" font-weight="900" fill="#1A1F2E">MON</text></svg><select class="vsel" data-a="Monday" aria-label="word for picture 6"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">7.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="town"><rect x="16" y="48" width="30" height="32" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/><polygon points="13,48 31,32 49,48" fill="#8C6B4A" stroke="#1A1F2E" stroke-width="3"/><rect x="58" y="40" width="32" height="40" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/><polygon points="55,40 74,24 93,40" fill="#8C6B4A" stroke="#1A1F2E" stroke-width="3"/><rect x="0" y="78" width="120" height="4" fill="#1A1F2E"/></svg><select class="vsel" data-a="town" aria-label="word for picture 7"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">8.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="shopkeeper"><rect x="18" y="64" width="84" height="18" fill="#8C6B4A" stroke="#1A1F2E" stroke-width="3"/><ellipse cx="60" cy="54" rx="22" ry="19" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/><circle cx="60" cy="26" r="15" fill="#F4D2CB" stroke="#1A1F2E" stroke-width="3"/><circle cx="55" cy="25" r="2" fill="#1A1F2E"/><circle cx="65" cy="25" r="2" fill="#1A1F2E"/><path d="M 54,32 q 6,5 12,0" fill="none" stroke="#1A1F2E" stroke-width="2.5" stroke-linecap="round"/></svg><select class="vsel" data-a="shopkeeper" aria-label="word for picture 8"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div></div><div class="vq-foot"><button class="tool-btn" id="vcheck">Check my answers</button><span class="small" id="vout"></span></div></div><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Tap the correct verb. Use <b>s</b> at the end for <i>he</i>, <i>she</i>, or <i>it</i>. Then write the sentence in your language.</div><div class="vq-eg"><i>EXAMPLE:</i> Rara <u>walk / <b>walks</b></u> to the market. &nbsp; ML: <u>&nbsp;Rara camina al mercado.&nbsp;</u></div><div class="vline" data-a="walks"><div class="vl-sent"><span class="vl-n">1.</span> Rara <button class="vchoice" data-v="walk">walk</button> / <button class="vchoice" data-v="walks">walks</button> to the fish market.</div><div class="mlline">ML: <input type="text" class="mlin" aria-label="sentence 1 in my language"><span class="vline-print print-only">_________________________________</span></div></div><div class="vline" data-a="smiles"><div class="vl-sent"><span class="vl-n">2.</span> The shopkeeper <button class="vchoice" data-v="smile">smile</button> / <button class="vchoice" data-v="smiles">smiles</button> at Rara.</div><div class="mlline">ML: <input type="text" class="mlin" aria-label="sentence 2 in my language"><span class="vline-print print-only">_________________________________</span></div></div><div class="vline" data-a="know"><div class="vl-sent"><span class="vl-n">3.</span> Rara and the shopkeeper <button class="vchoice" data-v="know">know</button> / <button class="vchoice" data-v="knows">knows</button> each other.</div><div class="mlline">ML: <input type="text" class="mlin" aria-label="sentence 3 in my language"><span class="vline-print print-only">_________________________________</span></div></div><div class="vline" data-a="carries"><div class="vl-sent"><span class="vl-n">4.</span> Rara <button class="vchoice" data-v="carry">carry</button> / <button class="vchoice" data-v="carries">carries</button> a small red bag.</div><div class="mlline">ML: <input type="text" class="mlin" aria-label="sentence 4 in my language"><span class="vline-print print-only">_________________________________</span></div></div><div class="vline" data-a="watch"><div class="vl-sent"><span class="vl-n">5.</span> The people in the town <button class="vchoice" data-v="watch">watch</button> / <button class="vchoice" data-v="watches">watches</button> her every Monday.</div><div class="mlline">ML: <input type="text" class="mlin" aria-label="sentence 5 in my language"><span class="vline-print print-only">_________________________________</span></div></div></div><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Write the verb <b>walk</b> for each person. Remember the <b>s</b> for she, he, and it.</div><table class="conj"><tr><th colspan="2">walk &nbsp; ML: <input type="text" class="mlin short" aria-label="walk in my language"><span class="vline-print print-only">____________</span></th></tr><tr><td>1st person singular</td><td>I <b>walk</b></td></tr><tr><td>2nd person singular</td><td>You <input type="text" class="cin"></td></tr><tr><td>3rd person singular</td><td>She <input type="text" class="cin"></td></tr><tr><td>3rd person singular</td><td>He <input type="text" class="cin"></td></tr><tr><td>3rd person singular</td><td>It <input type="text" class="cin"></td></tr><tr><td>1st person plural</td><td>We <input type="text" class="cin"></td></tr><tr><td>3rd person plural</td><td>They <input type="text" class="cin"></td></tr></table></div><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Answer the questions. Tap the answer that is true for you.</div><div class="vq-eg"><i>EXAMPLE:</i> Do you like fish? &nbsp; <u>Yes, I like fish.</u> / No, I do not like fish.</div><div class="crow"><div class="cq"><span class="vl-n">1.</span> Do you go shopping for your family?</div><div class="copts"><button class="circ">Yes, I go shopping.</button><button class="circ">No, I do not go shopping.</button></div></div><div class="crow"><div class="cq"><span class="vl-n">2.</span> Do you walk to the store, or do you ride?</div><div class="copts"><button class="circ">I walk to the store.</button><button class="circ">I ride to the store.</button></div></div><div class="crow"><div class="cq"><span class="vl-n">3.</span> Do you do the same thing every week?</div><div class="copts"><button class="circ">Yes, every week.</button><button class="circ">No, it is different.</button></div></div><div class="vq-foot small">Then ask another person in your class the same questions.</div></div><div class="next-row"><button class="next-btn" id="next-0" disabled onclick="goToPage(1)">Start reading →</button></div></section>
+<section class="page" id="page-0"><div class="page-meta"><div class="label">Words <strong>first</strong></div><div class="dot-progress"><div class="d current"></div><div class="d"></div><div class="d"></div><div class="d"></div></div></div><div class="wt-note">Tap words is <b>ON</b>. Tap <b>any word</b> — in the directions or in the activities — to see it in your language. Your taps will not choose answers until you turn it off.</div><h2 class="vq-title">Vocabulary Practice</h2><p class="small" style="margin-bottom:16px">Learn these words before you read. You will see all of them in the story.</p><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Match the picture with a word from the word bank.</div><div class="wordbank"><div class="wb-label">WORD BANK</div><div class="wb-words">Monday&nbsp; &nbsp;bag&nbsp; &nbsp;fish&nbsp; &nbsp;market&nbsp; &nbsp;money&nbsp; &nbsp;penguin&nbsp; &nbsp;shopkeeper&nbsp; &nbsp;town</div></div><div class="vq-eg"><i>EXAMPLE:</i> &nbsp;___<u>&nbsp;fish&nbsp;</u>___</div><div class="vpic-grid"><div class="vpic"><div class="vpic-n">1.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="penguin"><ellipse cx="60" cy="52" rx="21" ry="27" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/><ellipse cx="60" cy="56" rx="13" ry="19" fill="#FFFCF3"/><circle cx="60" cy="23" r="15" fill="#1A1F2E" stroke="#1A1F2E" stroke-width="3"/><ellipse cx="60" cy="27" rx="9" ry="10" fill="#FFFCF3"/><circle cx="55" cy="21" r="2.2" fill="#1A1F2E"/><circle cx="65" cy="21" r="2.2" fill="#1A1F2E"/><polygon points="56,28 64,28 60,34" fill="#D9A441" stroke="#1A1F2E" stroke-width="1.5"/><ellipse cx="52" cy="80" rx="8" ry="5" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/><ellipse cx="68" cy="80" rx="8" ry="5" fill="#D9A441" stroke="#1A1F2E" stroke-width="2"/></svg><select class="vsel" data-a="penguin" aria-label="word for picture 1"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">2.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="market"><rect x="24" y="30" width="72" height="50" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/><path d="M 16,40 H 104 L 95,56 H 25 Z" fill="#D94A38" stroke="#1A1F2E" stroke-width="3"/><rect x="46" y="58" width="24" height="22" fill="#CFE2EE" stroke="#1A1F2E" stroke-width="2"/><text x="60" y="37" text-anchor="middle" font-family="Fraunces,serif" font-size="11" font-weight="700" fill="#1A1F2E">魚</text></svg><select class="vsel" data-a="market" aria-label="word for picture 2"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">3.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="fish"><ellipse cx="58" cy="45" rx="32" ry="19" fill="#7AB5D0" stroke="#1A1F2E" stroke-width="3"/><polygon points="90,45 110,30 110,60" fill="#7AB5D0" stroke="#1A1F2E" stroke-width="3"/><circle cx="40" cy="39" r="3.5" fill="#1A1F2E"/><path d="M 52,34 q 9,7 0,14" fill="none" stroke="#1A1F2E" stroke-width="2"/></svg><select class="vsel" data-a="fish" aria-label="word for picture 3"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">4.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="money"><circle cx="45" cy="52" r="17" fill="#D9A441" stroke="#1A1F2E" stroke-width="3"/><circle cx="74" cy="45" r="17" fill="#D9A441" stroke="#1A1F2E" stroke-width="3"/><text x="74" y="52" text-anchor="middle" font-family="Fraunces,serif" font-size="18" font-weight="900" fill="#1A1F2E">100</text></svg><select class="vsel" data-a="money" aria-label="word for picture 4"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">5.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="bag"><rect x="38" y="32" width="46" height="48" fill="#D94A38" stroke="#1A1F2E" stroke-width="3"/><path d="M 48,32 q 13,-18 26,0" fill="none" stroke="#1A1F2E" stroke-width="3"/></svg><select class="vsel" data-a="bag" aria-label="word for picture 5"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">6.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Monday"><rect x="26" y="24" width="68" height="56" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/><rect x="26" y="24" width="68" height="16" fill="#2E6B8C" stroke="#1A1F2E" stroke-width="3"/><line x1="42" y1="16" x2="42" y2="32" stroke="#1A1F2E" stroke-width="4"/><line x1="78" y1="16" x2="78" y2="32" stroke="#1A1F2E" stroke-width="4"/><text x="60" y="66" text-anchor="middle" font-family="Fraunces,serif" font-size="18" font-weight="900" fill="#1A1F2E">MON</text></svg><select class="vsel" data-a="Monday" aria-label="word for picture 6"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">7.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="town"><rect x="16" y="48" width="30" height="32" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/><polygon points="13,48 31,32 49,48" fill="#8C6B4A" stroke="#1A1F2E" stroke-width="3"/><rect x="58" y="40" width="32" height="40" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/><polygon points="55,40 74,24 93,40" fill="#8C6B4A" stroke="#1A1F2E" stroke-width="3"/><rect x="0" y="78" width="120" height="4" fill="#1A1F2E"/></svg><select class="vsel" data-a="town" aria-label="word for picture 7"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div><div class="vpic"><div class="vpic-n">8.</div><svg class="vpic-art" viewBox="0 0 120 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="shopkeeper"><rect x="18" y="64" width="84" height="18" fill="#8C6B4A" stroke="#1A1F2E" stroke-width="3"/><ellipse cx="60" cy="54" rx="22" ry="19" fill="#FFFCF3" stroke="#1A1F2E" stroke-width="3"/><circle cx="60" cy="26" r="15" fill="#F4D2CB" stroke="#1A1F2E" stroke-width="3"/><circle cx="55" cy="25" r="2" fill="#1A1F2E"/><circle cx="65" cy="25" r="2" fill="#1A1F2E"/><path d="M 54,32 q 6,5 12,0" fill="none" stroke="#1A1F2E" stroke-width="2.5" stroke-linecap="round"/></svg><select class="vsel" data-a="shopkeeper" aria-label="word for picture 8"><option value="">— choose —</option><option value="Monday">Monday</option><option value="bag">bag</option><option value="fish">fish</option><option value="market">market</option><option value="money">money</option><option value="penguin">penguin</option><option value="shopkeeper">shopkeeper</option><option value="town">town</option></select><span class="vline-print print-only">___________________</span></div></div><div class="vq-foot"><button class="tool-btn" id="vcheck">Check my answers</button><span class="small" id="vout"></span></div></div><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Tap the correct verb. Use <b>s</b> at the end for <i>he</i>, <i>she</i>, or <i>it</i>. Then write the sentence in your language.</div><div class="vq-eg"><i>EXAMPLE:</i> Rara <u>walk / <b>walks</b></u> to the market. &nbsp; ML: <u>&nbsp;Rara camina al mercado.&nbsp;</u></div><div class="vline" data-a="walks"><div class="vl-sent"><span class="vl-n">1.</span> Rara <button class="vchoice" data-v="walk">walk</button> / <button class="vchoice" data-v="walks">walks</button> to the fish market.</div><div class="mlline">ML: <input type="text" class="mlin" aria-label="sentence 1 in my language"><span class="vline-print print-only">_________________________________</span></div></div><div class="vline" data-a="smiles"><div class="vl-sent"><span class="vl-n">2.</span> The shopkeeper <button class="vchoice" data-v="smile">smile</button> / <button class="vchoice" data-v="smiles">smiles</button> at Rara.</div><div class="mlline">ML: <input type="text" class="mlin" aria-label="sentence 2 in my language"><span class="vline-print print-only">_________________________________</span></div></div><div class="vline" data-a="know"><div class="vl-sent"><span class="vl-n">3.</span> Rara and the shopkeeper <button class="vchoice" data-v="know">know</button> / <button class="vchoice" data-v="knows">knows</button> each other.</div><div class="mlline">ML: <input type="text" class="mlin" aria-label="sentence 3 in my language"><span class="vline-print print-only">_________________________________</span></div></div><div class="vline" data-a="carries"><div class="vl-sent"><span class="vl-n">4.</span> Rara <button class="vchoice" data-v="carry">carry</button> / <button class="vchoice" data-v="carries">carries</button> a small red bag.</div><div class="mlline">ML: <input type="text" class="mlin" aria-label="sentence 4 in my language"><span class="vline-print print-only">_________________________________</span></div></div><div class="vline" data-a="watch"><div class="vl-sent"><span class="vl-n">5.</span> The people in the town <button class="vchoice" data-v="watch">watch</button> / <button class="vchoice" data-v="watches">watches</button> her every Monday.</div><div class="mlline">ML: <input type="text" class="mlin" aria-label="sentence 5 in my language"><span class="vline-print print-only">_________________________________</span></div></div></div><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Write the verb <b>walk</b> for each person. Remember the <b>s</b> for she, he, and it.</div><table class="conj"><tr><th colspan="2">walk &nbsp; ML: <input type="text" class="mlin short" data-w="walk" aria-label="walk in my language"><span class="vline-print print-only">____________</span></th></tr><tr><td>1st person singular</td><td>I <b>walk</b></td></tr><tr><td>2nd person singular</td><td>You <input type="text" class="cin"></td></tr><tr><td>3rd person singular</td><td>She <input type="text" class="cin"></td></tr><tr><td>3rd person singular</td><td>He <input type="text" class="cin"></td></tr><tr><td>3rd person singular</td><td>It <input type="text" class="cin"></td></tr><tr><td>1st person plural</td><td>We <input type="text" class="cin"></td></tr><tr><td>3rd person plural</td><td>They <input type="text" class="cin"></td></tr></table></div><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Answer the questions. Tap the answer that is true for you.</div><div class="vq-eg"><i>EXAMPLE:</i> Do you like fish? &nbsp; <u>Yes, I like fish.</u> / No, I do not like fish.</div><div class="crow"><div class="cq"><span class="vl-n">1.</span> Do you go shopping for your family?</div><div class="copts"><button class="circ">Yes, I go shopping.</button><button class="circ">No, I do not go shopping.</button></div></div><div class="crow"><div class="cq"><span class="vl-n">2.</span> Do you walk to the store, or do you ride?</div><div class="copts"><button class="circ">I walk to the store.</button><button class="circ">I ride to the store.</button></div></div><div class="crow"><div class="cq"><span class="vl-n">3.</span> Do you do the same thing every week?</div><div class="copts"><button class="circ">Yes, every week.</button><button class="circ">No, it is different.</button></div></div><div class="vq-foot small">Then ask another person in your class the same questions.</div></div><div class="next-row"><button class="next-btn" id="next-0" disabled onclick="goToPage(1)">Start reading →</button></div></section>
 
 <!-- ─── PAGE 1 ─── -->
 <section class="page" id="page-1">
@@ -904,7 +919,7 @@ body.no-motion .mk-bag{animation:none !important;}
       <g class="gull"><path d="M 60,44 q 9,-7 18,0 q 9,-7 18,0" fill="none" stroke="#1A1F2E" stroke-width="2.5" stroke-linecap="round"/></g></svg>
     </div>
     <div class="panel-caption">
-      Otsuchi is a small <span class="gl" tabindex="0" role="button" data-w="town">town</span> on the coast of Japan. <span class="gl" tabindex="0" role="button" data-w="Every Monday">Every Monday</span>, a <strong>penguin</strong> <span class="gl" tabindex="0" role="button" data-w="walks">walks</span> by herself from her home down to the fish <span class="gl" tabindex="0" role="button" data-w="market">market</span>. Her name is <strong>Rara</strong>, and everyone in the town knows her.
+      Otsuchi is a small <span class="gl" tabindex="0" role="button" data-w="town">town</span> on the coast of Japan<span class='jpflag' title='Japan'><svg viewBox='0 0 30 20' xmlns='http://www.w3.org/2000/svg' role='img' aria-label='flag of Japan'><rect width='30' height='20' fill='#FFFFFF' stroke='#1A1F2E' stroke-width='1.6'/><circle cx='15' cy='10' r='5.6' fill='#BC002D'/></svg></span>. <span class="gl" tabindex="0" role="button" data-w="Every Monday">Every Monday</span>, a <strong>penguin</strong> <span class="gl" tabindex="0" role="button" data-w="walks">walks</span> by herself from her home down to the fish <span class="gl" tabindex="0" role="button" data-w="market">market</span>. Her name is <strong>Rara</strong>, and everyone in the town knows her.
     </div>
   </div>
 
@@ -1136,7 +1151,7 @@ body.no-motion .mk-bag{animation:none !important;}
   </div>
 
 <div class="question scored" data-qid="q4" data-correct="b"><div class="q-header"><span class="q-tag scored">Question</span><span class="q-num">Q4</span></div><div class="q-prompt">Why does Rara go to the fish market?</div><div class="choices"><button class="choice" onclick="answerScored(this,'q4','a')"><span class="letter">A.</span>To see her friend</button><button class="choice" onclick="answerScored(this,'q4','b')"><span class="letter">B.</span>To buy a fish</button><button class="choice" onclick="answerScored(this,'q4','c')"><span class="letter">C.</span>To swim</button><button class="choice" onclick="answerScored(this,'q4','d')"><span class="letter">D.</span>To sell her bag</button></div><div class="q-feedback" id="fb-q4"></div><div class="print-answer print-only">My answer: ________&nbsp;&nbsp;&nbsp; Why? ________________________________</div></div><div class="question scored" data-qid="q5" data-correct="c"><div class="q-header"><span class="q-tag scored">Question</span><span class="q-num">Q5</span></div><div class="q-prompt">Who does Rara go to the market with?</div><div class="choices"><button class="choice" onclick="answerScored(this,'q5','a')"><span class="letter">A.</span>Her family</button><button class="choice" onclick="answerScored(this,'q5','b')"><span class="letter">B.</span>The shopkeeper</button><button class="choice" onclick="answerScored(this,'q5','c')"><span class="letter">C.</span>Nobody — she goes alone</button><button class="choice" onclick="answerScored(this,'q5','d')"><span class="letter">D.</span>A fish</button></div><div class="q-feedback" id="fb-q5"></div><div class="print-answer print-only">My answer: ________&nbsp;&nbsp;&nbsp; Why? ________________________________</div></div><div class="question scored" data-qid="q6" data-correct="a"><div class="q-header"><span class="q-tag scored">Question</span><span class="q-num">Q6</span></div><div class="q-prompt">The shopkeeper says "Hello, Rara!" What does this tell you?</div><div class="choices"><button class="choice" onclick="answerScored(this,'q6','a')"><span class="letter">A.</span>She knows Rara well</button><button class="choice" onclick="answerScored(this,'q6','b')"><span class="letter">B.</span>She is afraid of Rara</button><button class="choice" onclick="answerScored(this,'q6','c')"><span class="letter">C.</span>She has never seen Rara</button><button class="choice" onclick="answerScored(this,'q6','d')"><span class="letter">D.</span>She wants Rara to leave</button></div><div class="q-feedback" id="fb-q6"></div><div class="print-answer print-only">My answer: ________&nbsp;&nbsp;&nbsp; Why? ________________________________</div></div>
-<h2 class="vq-title" style="margin-top:34px">After You Read</h2><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Answer the question with <b>didn't</b>.</div><div class="vq-eg"><i>EXAMPLE:</i> Did Rara stay home? &nbsp; <u>No, Rara didn’t stay home.</u></div><div class="wrow"><div class="cq"><span class="vl-n">1.</span> Did Rara take the fish without paying?</div><input type="text" class="wlin" aria-label="answer 1"><span class="vline-print print-only">_____________________________________________________</span></div><div class="wrow"><div class="cq"><span class="vl-n">2.</span> Did the shopkeeper give Rara a book?</div><input type="text" class="wlin" aria-label="answer 2"><span class="vline-print print-only">_____________________________________________________</span></div><div class="wrow"><div class="cq"><span class="vl-n">3.</span> Did Rara go to the market on Sunday?</div><input type="text" class="wlin" aria-label="answer 3"><span class="vline-print print-only">_____________________________________________________</span></div></div><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Write a <b>sentence</b> and then a <b>question</b> about the story. Use 2–3 words from the word bank. Use capital letters and periods.</div><div class="vq-eg"><i>EXAMPLE:</i> <u>Rara walked to the fish market on Monday.</u> / <u>Why did Rara walk to the market?</u></div><div class="minibank">walk&nbsp; market&nbsp; money&nbsp; fish&nbsp; bag&nbsp; shopkeeper&nbsp; home&nbsp; Monday</div><div class="wrow"><div class="cq"><span class="vl-n">1.</span> Write a SENTENCE about Panel 1:</div><input type="text" class="wlin" aria-label="answer 1"><span class="vline-print print-only">_____________________________________________________</span></div><div class="wrow"><div class="cq"><span class="vl-n">2.</span> Write a QUESTION about Panel 1:</div><input type="text" class="wlin" aria-label="answer 2"><span class="vline-print print-only">_____________________________________________________</span></div><div class="wrow"><div class="cq"><span class="vl-n">3.</span> Write a SENTENCE about Panel 3:</div><input type="text" class="wlin" aria-label="answer 3"><span class="vline-print print-only">_____________________________________________________</span></div><div class="wrow"><div class="cq"><span class="vl-n">4.</span> Write a QUESTION about Panel 3:</div><input type="text" class="wlin" aria-label="answer 4"><span class="vline-print print-only">_____________________________________________________</span></div></div><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Answer the questions. Tap the answer that is true for you.</div><div class="vq-eg"><i>EXAMPLE:</i> Do you like fish? &nbsp; <u>Yes, I like fish.</u> / No, I do not like fish.</div><div class="crow"><div class="cq"><span class="vl-n">1.</span> Do you know an animal that does something surprising?</div><div class="copts"><button class="circ">Yes, I do.</button><button class="circ">No, I do not.</button></div></div><div class="crow"><div class="cq"><span class="vl-n">2.</span> Should animals walk around a town alone?</div><div class="copts"><button class="circ">Yes, they should.</button><button class="circ">No, they should not.</button></div></div><div class="vq-foot small">Then ask another person in your class the same questions.</div></div>
+<h2 class="vq-title" style="margin-top:34px">After You Read</h2><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Answer the question with <b>didn't</b>. There is more than one right way to say it.</div><div class="vq-eg"><i>EXAMPLE:</i> Did Rara stay home? &nbsp; <u>No, Rara didn’t stay home.</u></div><div class="wrow" data-chk="didnt" data-id="dn1"><div class="cq"><span class="vl-n">1.</span> Did Rara take the fish without paying?</div><input type="text" class="wlin" aria-label="answer 1"><span class="vline-print print-only">_____________________________________________________</span><span class="wfb"></span><span class="wtries"></span></div><div class="wrow" data-chk="didnt" data-id="dn2"><div class="cq"><span class="vl-n">2.</span> Did the shopkeeper give Rara a book?</div><input type="text" class="wlin" aria-label="answer 2"><span class="vline-print print-only">_____________________________________________________</span><span class="wfb"></span><span class="wtries"></span></div><div class="wrow" data-chk="didnt" data-id="dn3"><div class="cq"><span class="vl-n">3.</span> Did Rara go to the market on Sunday?</div><input type="text" class="wlin" aria-label="answer 3"><span class="vline-print print-only">_____________________________________________________</span><span class="wfb"></span><span class="wtries"></span></div><div class="vq-foot"><button class="tool-btn wcheck">Check my answers</button><span class="small wout"></span></div></div><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Write a <b>sentence</b> and then a <b>question</b> about the story. Use 2–3 words from the word bank. Use capital letters and periods.</div><div class="vq-eg"><i>EXAMPLE:</i> <u>Rara walked to the fish market on Monday.</u> / <u>Why did Rara walk to the market?</u></div><div class="minibank">walk&nbsp; market&nbsp; money&nbsp; fish&nbsp; bag&nbsp; shopkeeper&nbsp; home&nbsp; Monday</div><div class="wrow" data-chk="" data-id="1"><div class="cq"><span class="vl-n">1.</span> Write a SENTENCE about Panel 1:</div><input type="text" class="wlin" aria-label="answer 1"><span class="vline-print print-only">_____________________________________________________</span><span class="wfb"></span><span class="wtries"></span></div><div class="wrow" data-chk="" data-id="2"><div class="cq"><span class="vl-n">2.</span> Write a QUESTION about Panel 1:</div><input type="text" class="wlin" aria-label="answer 2"><span class="vline-print print-only">_____________________________________________________</span><span class="wfb"></span><span class="wtries"></span></div><div class="wrow" data-chk="" data-id="3"><div class="cq"><span class="vl-n">3.</span> Write a SENTENCE about Panel 3:</div><input type="text" class="wlin" aria-label="answer 3"><span class="vline-print print-only">_____________________________________________________</span><span class="wfb"></span><span class="wtries"></span></div><div class="wrow" data-chk="" data-id="4"><div class="cq"><span class="vl-n">4.</span> Write a QUESTION about Panel 3:</div><input type="text" class="wlin" aria-label="answer 4"><span class="vline-print print-only">_____________________________________________________</span><span class="wfb"></span><span class="wtries"></span></div></div><div class="vq"><div class="vq-dir"><b>DIRECTIONS:</b> Answer the questions. Tap the answer that is true for you.</div><div class="vq-eg"><i>EXAMPLE:</i> Do you like fish? &nbsp; <u>Yes, I like fish.</u> / No, I do not like fish.</div><div class="crow"><div class="cq"><span class="vl-n">1.</span> Do you know an animal that does something surprising?</div><div class="copts"><button class="circ">Yes, I do.</button><button class="circ">No, I do not.</button></div></div><div class="crow"><div class="cq"><span class="vl-n">2.</span> Should animals walk around a town alone?</div><div class="copts"><button class="circ">Yes, they should.</button><button class="circ">No, they should not.</button></div></div><div class="vq-foot small">Then ask another person in your class the same questions.</div></div>
 
 <div class="media-card">
   <div class="mc-strip">🎬 After you read — the real penguin</div>
@@ -1382,10 +1397,47 @@ var VETSX = (function(){
   var GLOSS = {"town": "a small city; a place where people live", "market": "a place where people buy and sell things", "shopkeeper": "the person who works in a shop and sells things", "money": "coins and paper you use to buy things", "bag": "something you carry things in", "smiles": "makes a happy face", "gives": "puts something into another person's hand", "happy": "feeling good; glad", "walks": "goes somewhere using her feet", "Every Monday": "on Monday of every week; again and again", "puts": "places something somewhere", "syllable": "one beat in a word (pen-guin has two)"};
   var LEVEL = "101B";
   var PROXY = "https://script.google.com/macros/s/AKfycbwbFr3oopIITlxKDhI5wGhEZdomWc3tmB5ZSK6NpBVisPAz-CMA4uKiruXDkCEU3T0Q/exec";
-  var LANGS = [["","Translate…"],["es","Espanol"],["zh-CN","中文"],["ar","العربية"],
-               ["vi","Tieng Viet"],["th","ไทย"],["ne","नेपाली"],["tl","Tagalog"],
-               ["ru","Русский"],["pt","Portugues"],["fr","Francais"],["ja","日本語"]];
+  var LANGS = [["","Translate…"],["es","Español"],["zh-CN","中文 (Mandarin)"],
+               ["yue","粵語 (Cantonese)"],["ar","العربية"],["ary","الدارجة (Darija)"],
+               ["vi","Tiếng Việt"],["th","ไทย"],["ne","नेपाली"],["hi","हिन्दी"],
+               ["ur","اردو"],["tl","Tagalog"],["ru","Русский"],["fr","Français"],
+               ["ko","한국어"],["so","Soomaali"]];
   var cache = {};
+  var TR_LANGS = ["es", "zh-CN", "ar", "vi", "th", "ne", "tl", "ru"];
+  var TR = {"penguin": ["pingüino", "企鹅", "بطريق", "chim cánh cụt", "เพนกวิน", "पेन्गुइन", "pengwin", "пингвин"], "market": ["mercado", "市场", "سوق", "chợ", "ตลาด", "बजार", "palengke", "рынок"], "fish": ["pez", "鱼", "سمك", "cá", "ปลา", "माछा", "isda", "рыба"], "money": ["dinero", "钱", "مال", "tiền", "เงิน", "पैसा", "pera", "деньги"], "bag": ["bolsa", "袋子", "حقيبة", "túi", "กระเป๋า", "झोला", "bag", "сумка"], "monday": ["lunes", "星期一", "الاثنين", "thứ Hai", "วันจันทร์", "सोमबार", "Lunes", "понедельник"], "town": ["pueblo", "小镇", "بلدة", "thị trấn", "เมือง", "सहर", "bayan", "городок"], "shopkeeper": ["tendero", "店主", "صاحب المتجر", "chủ cửa hàng", "เจ้าของร้าน", "पसले", "tindero", "продавец"], "walk": ["caminar", "走", "يمشي", "đi bộ", "เดิน", "हिँड्नु", "maglakad", "идти"], "walks": ["camina", "走", "يمشي", "đi bộ", "เดิน", "हिँड्छ", "naglalakad", "идёт"], "smile": ["sonreír", "微笑", "يبتسم", "mỉm cười", "ยิ้ม", "मुस्कुराउनु", "ngumiti", "улыбаться"], "smiles": ["sonríe", "微笑", "تبتسم", "mỉm cười", "ยิ้ม", "मुस्कुराउँछ", "ngumingiti", "улыбается"], "gives": ["da", "给", "يعطي", "đưa", "ให้", "दिन्छ", "nagbibigay", "даёт"], "give": ["dar", "给", "يعطي", "đưa", "ให้", "दिनु", "magbigay", "давать"], "happy": ["feliz", "快乐", "سعيد", "vui", "มีความสุข", "खुसी", "masaya", "счастливый"], "home": ["casa", "家", "بيت", "nhà", "บ้าน", "घर", "bahay", "дом"], "japan": ["Japón", "日本", "اليابان", "Nhật Bản", "ญี่ปุ่น", "जापान", "Hapon", "Япония"], "red": ["rojo", "红色", "أحمر", "đỏ", "สีแดง", "रातो", "pula", "красный"], "small": ["pequeño", "小", "صغير", "nhỏ", "เล็ก", "सानो", "maliit", "маленький"], "buy": ["comprar", "买", "يشتري", "mua", "ซื้อ", "किन्नु", "bumili", "покупать"], "shop": ["tienda", "商店", "متجر", "cửa hàng", "ร้าน", "पसल", "tindahan", "магазин"], "people": ["gente", "人们", "ناس", "người", "ผู้คน", "मानिसहरू", "mga tao", "люди"], "week": ["semana", "星期", "أسبوع", "tuần", "สัปดาห์", "हप्ता", "linggo", "неделя"], "carry": ["llevar", "携带", "يحمل", "mang", "ถือ", "बोक्नु", "magdala", "нести"], "alone": ["sola", "独自", "وحدها", "một mình", "คนเดียว", "एक्लै", "mag-isa", "одна"], "inside": ["dentro", "里面", "داخل", "bên trong", "ข้างใน", "भित्र", "sa loob", "внутри"], "hello": ["hola", "你好", "مرحبا", "xin chào", "สวัสดี", "नमस्ते", "kumusta", "привет"], "name": ["nombre", "名字", "اسم", "tên", "ชื่อ", "नाम", "pangalan", "имя"], "word": ["palabra", "词", "كلمة", "từ", "คำ", "शब्द", "salita", "слово"], "picture": ["imagen", "图片", "صورة", "hình", "รูปภาพ", "तस्बिर", "larawan", "картинка"], "sentence": ["oración", "句子", "جملة", "câu", "ประโยค", "वाक्य", "pangungusap", "предложение"], "store": ["tienda", "商店", "متجر", "cửa hàng", "ร้าน", "पसल", "tindahan", "магазин"]};
+  var SPELLMSG = {"es": "Revisa la ortografía.", "zh-CN": "请检查拼写。", "ar": "تحقق من الإملاء.", "vi": "Kiểm tra chính tả.", "th": "ตรวจสอบการสะกด", "ne": "हिज्जे जाँच गर्नुहोस्।", "tl": "Suriin ang baybay.", "ru": "Проверьте написание."};
+
+  function baked(word, lg){
+    var i = TR_LANGS.indexOf(lg);
+    if (i < 0) return null;
+    var row = TR[String(word).toLowerCase().replace(/[^a-z']/g, "")];
+    return row ? row[i] : null;
+  }
+
+  /* Built-in first: no network, no waiting, works offline and in print.
+     Anything outside the built-in list falls back to the proxy, raced
+     against a timer so a word can never sit on "translating..." forever. */
+  function translate(word, context){
+    var lg = lang();
+    if (!lg) return Promise.resolve(null);
+    var hit = baked(word, lg);
+    if (hit) return Promise.resolve(hit);
+
+    var key = String(word).toLowerCase() + "|" + lg;
+    if (cache[key]) return Promise.resolve(cache[key]);
+
+    var url = PROXY + "?action=translate&idiom=" + encodeURIComponent(word)
+            + "&lang=" + encodeURIComponent(lg)
+            + "&context=" + encodeURIComponent(context || "");
+    var live = fetch(url).then(function(r){ return r.json(); }).then(function(j){
+      var t = (j && j.translation) ? (j.translation.equiv || j.translation.meaning) : null;
+      if (t) cache[key] = t;
+      return t;
+    }).catch(function(){ return null; });
+    var timer = new Promise(function(res){ setTimeout(function(){ res(null); }, 6000); });
+    return Promise.race([live, timer]);
+  }
+
 
   function lang(){ try{ return localStorage.getItem("vets_lang")||""; }catch(e){ return ""; } }
 
@@ -1401,39 +1453,12 @@ var VETSX = (function(){
     };
   }
 
-  function closePop(){
-    var p = document.querySelector(".gl-pop");
-    if(p) p.remove();
-  }
+  function closePop(){ hideTip(); }
 
+  /* The tooltip lives on <body>, not inside the word, because panel frames
+     clip anything drawn inside them. */
   function openPop(el){
-    closePop();
-    var w = el.dataset.w;
-    var def = GLOSS[w] || "";
-    var pop = document.createElement("span");
-    pop.className = "gl-pop";
-    pop.innerHTML = '<span class="w">'+w+'</span>'+def;
-    el.appendChild(pop);
-
-    var lg = lang();
-    if(!lg) return;
-    var tr = document.createElement("span");
-    tr.className = "tr wait";
-    tr.textContent = "translating…";
-    pop.appendChild(tr);
-
-    if(cache[w+lg]){ tr.className="tr"; tr.textContent=cache[w+lg]; return; }
-    fetch(PROXY+"?action=translate&idiom="+encodeURIComponent(w)
-          +"&lang="+encodeURIComponent(lg)
-          +"&context="+encodeURIComponent("Shopping Day, a penguin goes to the fish market"))
-      .then(function(r){ return r.json(); })
-      .then(function(j){
-        var t = j && j.translation ? (j.translation.equiv||j.translation.meaning) : null;
-        tr.className = "tr";
-        tr.textContent = t || "(no translation yet)";
-        if(t) cache[w+lg] = t;
-      })
-      .catch(function(){ tr.className="tr"; tr.textContent="(no translation yet)"; });
+    showTip(el, GLOSS[el.dataset.w] || "");
   }
 
   function wireGloss(){
@@ -1646,11 +1671,14 @@ var VETSX = (function(){
     if(t) t.classList.remove("show");
   }
 
-  function showTip(span){
+  function showTip(span, definition){
     var tip = document.getElementById("wtip");
     if(!tip) return;
-    var word = span.getAttribute("data-w");
+    var word = span.getAttribute("data-w") || span.textContent.trim();
     tip.querySelector(".ww").textContent = word;
+    var dnode = tip.querySelector(".wd");
+    dnode.textContent = definition || "";
+    dnode.style.display = definition ? "block" : "none";
     var out = tip.querySelector(".wt");
     tip.classList.add("show");
     var r = span.getBoundingClientRect();
@@ -1713,6 +1741,120 @@ var VETSX = (function(){
     }, 20000);
   }
 
+
+  /* ---- checking written answers ---------------------------------- */
+  function strip(s){
+    return String(s || "").toLowerCase()
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")   /* drop accents */
+      .replace(/[^\p{L}\p{N}\s']/gu, " ")
+      .replace(/\s+/g, " ").trim();
+  }
+  function edits(a, b){
+    if(a === b) return 0;
+    var m = a.length, n = b.length;
+    if(Math.abs(m - n) > 2) return 99;
+    var prev = [], cur = [], i, j;
+    for(j = 0; j <= n; j++) prev[j] = j;
+    for(i = 1; i <= m; i++){
+      cur[0] = i;
+      for(j = 1; j <= n; j++){
+        cur[j] = Math.min(prev[j] + 1, cur[j-1] + 1,
+                          prev[j-1] + (a.charAt(i-1) === b.charAt(j-1) ? 0 : 1));
+      }
+      prev = cur.slice();
+    }
+    return prev[n];
+  }
+
+  var TRIES = {};
+  function triesKey(){ return "vets_tries_" + LEVEL; }
+  function loadTries(){
+    try { TRIES = JSON.parse(localStorage.getItem(triesKey()) || "{}"); } catch(e){ TRIES = {}; }
+  }
+  function bumpTry(id, ok){
+    if(!TRIES[id]) TRIES[id] = { tries: 0, solved: false };
+    TRIES[id].tries++;
+    if(ok) TRIES[id].solved = true;
+    try { localStorage.setItem(triesKey(), JSON.stringify(TRIES)); } catch(e){}
+    return TRIES[id];
+  }
+
+  /* "Did Rara go on Sunday?" has many right answers. Accept any real
+     negative; nudge toward didn't when they have only half of it. */
+  function judgeDidnt(raw){
+    /* drop apostrophes so didn't, didn t and didnt all read the same */
+    var t = strip(raw).replace(/'/g, "").replace(/n t\b/g, "nt");
+    if(!t) return { grade:"none", msg:"Write an answer first." };
+    var hasNo   = /\bno\b/.test(t);
+    var hasDidnt= /\bdidnt\b/.test(t) || /\bdid not\b/.test(t);
+    var hasYes  = /\byes\b/.test(t);
+    if(hasYes && !hasNo) return { grade:"n", msg:"Not quite. Read the story again — the answer is no." };
+    if(hasNo && hasDidnt) return { grade:"y", msg:"Correct." };
+    if(hasNo)   return { grade:"warn", msg:"Right idea. Now use didn't: \u201cNo, Rara didn't \u2026\u201d" };
+    if(hasDidnt)return { grade:"warn", msg:"Good — now start with No: \u201cNo, Rara didn't \u2026\u201d" };
+    return { grade:"n", msg:"Answer with No and didn't." };
+  }
+
+  function wireChecking(){
+    document.querySelectorAll(".wcheck").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var box = btn.closest(".vq"), right = 0, total = 0;
+        box.querySelectorAll(".wrow[data-chk='didnt']").forEach(function(row){
+          var inp = row.querySelector(".wlin");
+          var fb  = row.querySelector(".wfb");
+          var tn  = row.querySelector(".wtries");
+          var r   = judgeDidnt(inp.value);
+          total++;
+          if(r.grade === "none"){ fb.className = "wfb n"; fb.textContent = r.msg; return; }
+          var rec = bumpTry(row.dataset.id, r.grade === "y");
+          inp.classList.remove("y","n","warn");
+          inp.classList.add(r.grade);
+          fb.className = "wfb " + r.grade;
+          fb.textContent = r.msg;
+          tn.textContent = "Tries: " + rec.tries + (rec.solved ? " \u2713" : "");
+          if(r.grade === "y") right++;
+        });
+        var out = box.querySelector(".wout");
+        if(out) out.textContent = right + " of " + total + " correct." +
+          (right < total ? " Fix them and check again." : "");
+      });
+    });
+
+    document.querySelectorAll(".mlcheck").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        var lg = lang();
+        var box = btn.closest(".vq");
+        var out = box.querySelector(".mlout");
+        if(!lg){ if(out) out.textContent = "Choose your language at the top first."; return; }
+        var right = 0, total = 0, unknown = 0;
+        box.querySelectorAll(".mlin[data-w]").forEach(function(inp){
+          var fb = inp.parentNode.querySelector(".mlfb");
+          var want = baked(inp.dataset.w, lg);
+          inp.classList.remove("y","n","warn");
+          if(!want){ unknown++; return; }          /* not in the built-in list */
+          total++;
+          var got = strip(inp.value);
+          if(!got){ fb.className = "mlfb n"; fb.textContent = "Write your translation first."; return; }
+          var target = strip(want);
+          var d = edits(got, target);
+          var tol = target.length > 6 ? 2 : 1;
+          if(d === 0){
+            inp.classList.add("y"); fb.className = "mlfb y"; fb.textContent = "Correct."; right++;
+          } else if(d <= tol){
+            inp.classList.add("warn"); fb.className = "mlfb warn";
+            fb.textContent = (SPELLMSG[lg] || "") + "  Check the spelling of your translation.";
+          } else {
+            inp.classList.add("n"); fb.className = "mlfb n";
+            fb.textContent = "Not quite. Try again, or tap the English word to see it.";
+          }
+        });
+        if(out) out.textContent = total
+          ? (right + " of " + total + " correct." + (unknown ? "  (" + unknown + " not checked in this language.)" : ""))
+          : "These words are not in the built-in list for this language yet.";
+      });
+    });
+  }
+
   function gateStart(){
     var sb   = document.querySelector("#title-page .start-btn");
     var tq   = document.querySelector("#title-page .question");
@@ -1740,6 +1882,7 @@ var VETSX = (function(){
   document.addEventListener("DOMContentLoaded", function(){
     protect(); buildPicker(); wireGloss(); gateStart(); wireArrivals();
     wireWorksheet(); rerouteStart(); wireTapWords(); watchCanary();
+    loadTries(); wireChecking();
     try{
       if(localStorage.getItem("vets_motion")==="off"){
         document.body.classList.add("no-motion");
